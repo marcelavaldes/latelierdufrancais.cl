@@ -7,7 +7,7 @@ module.exports = {
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "A GatsbyJS stater with Advanced design in mind.", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
-  siteFBAppID: "1825356251115265", // FB Application ID for using app insights
+  siteFBAppID: "148214869193038", // FB Application ID for using app insights
   googleAnalyticsID: "UA-78034545-3", // GA tracking ID.
   //disqusShortname: "https-vagr9k-github-io-gatsby-advanced-starter", // Disqus shortname.
   postDefaultCategoryID: "Aprende", // Default category for posts.
@@ -20,13 +20,13 @@ module.exports = {
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [
     {
-      label: "GitHub",
-      url: "https://github.com/Vagr9K/gatsby-advanced-starter",
-      iconClassName: "fa fa-github"
+      label: "Facebook",
+      url: "https://facebook.com/latelierdufrancais",
+      iconClassName: "fa fa-facebook"
     },
     {
       label: "Twitter",
-      url: "https://twitter.com/Vagr9K",
+      url: "https://twitter.com/latelierdufrancais",
       iconClassName: "fa fa-twitter"
     },
     {
