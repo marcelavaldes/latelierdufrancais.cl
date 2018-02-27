@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import Link from "gatsby-link"
 import config from "../../data/SiteConfig";
+import 'semantic-ui-css/semantic.min.css';
 import "./index.css";
 
 export default class MainLayout extends React.Component {
@@ -57,7 +58,8 @@ export default class MainLayout extends React.Component {
             <Link to="/">Home</Link>|
             <Link to="/about">About</Link>|
             <Link to="/clases">Clases</Link>|
-            <Link to="/cursos">Cursos</Link>
+            <Link to="/cursos">Cursos</Link>|
+            <Link to="/blog">Blog</Link>
           </div>
         </div>
         {children()}
