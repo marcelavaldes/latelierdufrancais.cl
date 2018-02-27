@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import Link from "gatsby-link"
 import config from "../../data/SiteConfig";
 import "./index.css";
 
@@ -19,8 +20,12 @@ export default class MainLayout extends React.Component {
       title = "Tags";
     } else if (currentPath === "categories/") {
       title = "Categories";
-    } else if (currentPath === "about/") {
+    } else if (currentPath === "about") {
       title = "About";
+    } else if (currentPath === "cursos") {
+      title = "Cursos";
+    } else if (currentPath === "clases") {
+      title = "Clases";
     } else if (currentPath.indexOf("posts")) {
       title = "Article";
     } else if (currentPath.indexOf("tags/")) {
@@ -47,7 +52,13 @@ export default class MainLayout extends React.Component {
           <meta name="description" content={config.siteDescription} />
         </Helmet>
         <div>
-          <h1>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</h1>
+          <h1><Link to="/">{`${config.siteTitle}`}</Link> | {`${this.getLocalTitle()}`}</h1>
+          <div>
+            <Link to="/">Home</Link>|
+            <Link to="/about">About</Link>|
+            <Link to="/clases">Clases</Link>|
+            <Link to="/cursos">Cursos</Link>
+          </div>
         </div>
         {children()}
       </div>
