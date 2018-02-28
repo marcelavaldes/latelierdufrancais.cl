@@ -1,11 +1,17 @@
-import React from "react";
+import React, { Component } from "react";
 import Helmet from "react-helmet";
 import Link from "gatsby-link"
+import { Container, Divider, Dropdown, Grid, Header, Image, List, Menu, Input, Icon, Segment } from 'semantic-ui-react'
 import config from "../../data/SiteConfig";
 import 'semantic-ui-css/semantic.min.css';
 import "./index.css";
+import twitter from "./twitter.svg";
+import facebook from "./facebook.svg";
+import email from "./email.svg";
 
-export default class MainLayout extends React.Component {
+export default class MainLayout extends Component {
+  state = { activeItem: 'home' }
+
   getLocalTitle() {
     function capitalize(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
@@ -28,7 +34,7 @@ export default class MainLayout extends React.Component {
     } else if (currentPath === "clases") {
       title = "Clases";
     } else if (currentPath.indexOf("posts")) {
-      title = "Article";
+      title = "Blog";
     } else if (currentPath.indexOf("tags/")) {
       const tag = currentPath
         .replace("tags/", "")
@@ -46,6 +52,8 @@ export default class MainLayout extends React.Component {
   }
   render() {
     const { children } = this.props;
+    const { activeItem } = this.state
+
     return (
       <div>
         <Helmet>
@@ -53,16 +61,63 @@ export default class MainLayout extends React.Component {
           <meta name="description" content={config.siteDescription} />
         </Helmet>
         <div>
-          <h1><Link to="/">{`${config.siteTitle}`}</Link> | {`${this.getLocalTitle()}`}</h1>
-          <div>
-            <Link to="/">Home</Link>|
-            <Link to="/about">About</Link>|
-            <Link to="/clases">Clases</Link>|
-            <Link to="/cursos">Cursos</Link>|
-            <Link to="/blog">Blog</Link>
-          </div>
+          <Menu borderless fixed='top'>
+            <Menu.Item header>
+              <Header
+                style={{
+                    fontSize: '3vh'
+                }}
+              >
+                <Link to="/">{`${config.siteTitle}`}</Link>
+              </Header>|
+              {`${this.getLocalTitle()}`}
+
+            </Menu.Item>
+
+            <Menu.Menu position='right'>
+              <Menu.Item>
+                <Link
+                  to="/clases"
+                >
+                  <Image
+                    size='mini'
+                    src={twitter}
+                  />
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link
+                  to="/cursos"
+                >
+                  <Image
+                    size='mini'
+                    src={facebook}
+                  />
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/blog">
+                  <Image
+                    size='mini'
+                    src={email}
+                  />
+                </Link>
+              </Menu.Item>
+            </Menu.Menu>
+
+          </Menu>
         </div>
-        {children()}
+        <Segment
+          basic
+          style={{
+              marginTop:' 4em'
+          }}
+        >
+          <div style={this.props.transition && this.props.transition.style}>
+            {children()}
+          </div>
+        </Segment>
+
       </div>
     );
   }
