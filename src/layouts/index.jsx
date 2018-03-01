@@ -5,9 +5,7 @@ import { Container, Divider, Dropdown, Grid, Header, Image, List, Menu, Input, I
 import config from "../../data/SiteConfig";
 import 'semantic-ui-css/semantic.min.css';
 import "./index.css";
-import twitter from "./twitter.svg";
-import facebook from "./facebook.svg";
-import email from "./email.svg";
+import Navbar from "../components/Navbar/Navbar"
 
 export default class MainLayout extends Component {
   state = { activeItem: 'home' }
@@ -61,51 +59,8 @@ export default class MainLayout extends Component {
           <meta name="description" content={config.siteDescription} />
         </Helmet>
         <div>
-          <Menu borderless fixed='top'>
-            <Menu.Item header>
-              <Header
-                style={{
-                    fontSize: '3vh'
-                }}
-              >
-                <Link to="/">{`${config.siteTitle}`}</Link>
-              </Header>|
-              {`${this.getLocalTitle()}`}
+          <Navbar title={config.siteTitle}/>
 
-            </Menu.Item>
-
-            <Menu.Menu position='right'>
-              <Menu.Item>
-                <Link
-                  to="/clases"
-                >
-                  <Image
-                    size='mini'
-                    src={twitter}
-                  />
-                </Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link
-                  to="/cursos"
-                >
-                  <Image
-                    size='mini'
-                    src={facebook}
-                  />
-                </Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/blog">
-                  <Image
-                    size='mini'
-                    src={email}
-                  />
-                </Link>
-              </Menu.Item>
-            </Menu.Menu>
-
-          </Menu>
         </div>
         <Segment
           basic
