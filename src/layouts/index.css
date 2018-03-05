@@ -4,20 +4,10 @@ body {
   font-family: 'Text Me One', sans-serif;
 }
 
-.ui.menu .ui.header,
 .ui.header {
+  font-family: 'Text Me One', sans-serif;
+}
+
+.ui.menu .ui.header {
   font-family: 'Just Me Again Down Here', cursive;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 20px;
 }

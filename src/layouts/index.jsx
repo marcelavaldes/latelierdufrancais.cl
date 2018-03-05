@@ -49,31 +49,19 @@ export default class MainLayout extends Component {
     return title;
   }
   render() {
-    const { children } = this.props;
-    const { activeItem } = this.state
-
     return (
-      <div>
+      <Segment
+        basic
+      >
         <Helmet>
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <div>
-          <Navbar title={config.siteTitle}/>
-
+        <Navbar title={config.siteTitle}/>
+        <div style={this.props.transition && this.props.transition.style}>
+          {this.props.children()}
         </div>
-        <Segment
-          basic
-          style={{
-              marginTop:' 4em'
-          }}
-        >
-          <div style={this.props.transition && this.props.transition.style}>
-            {children()}
-          </div>
-        </Segment>
-
-      </div>
+      </Segment>
     );
   }
 }
