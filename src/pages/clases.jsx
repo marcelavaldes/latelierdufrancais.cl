@@ -40,21 +40,24 @@ class ClasesPage extends Component {
           }}
         >
           <Grid
-            //container
+            container
             stackable
-            verticalAlign='middle'
+            verticalAlign='top'
             //columns='equal'
             style={{
                 //minHeight: `${this.state.height}px`,
-                marginTop: '2em'
+                marginTop: '8em'
             }}
           >
             <Grid.Row>
               <Grid.Column
                 width={10}
               >
-                <p style={{ fontSize: '24px', textAlign: 'justify' }}>
-                  Ofrecemos pack de lecciones pre-pagadas de 5 a 10 horas (para ser agrupadas a tu gusto) como también lecciones de 1 hora.
+                <p style={{ fontSize: '24px', textAlign: 'left' }}>
+                  Ofrecemos pack de lecciones particulares por horas para que dispongas de ellas como tu quieras.
+                </p>
+                <br />
+                <p style={{ fontSize: '24px', textAlign: 'left' }}>
                   Las tarifas son las mismas para todos los niveles y todo el material es provisto por nosotros.
                 </p>
               </Grid.Column>
@@ -62,24 +65,41 @@ class ClasesPage extends Component {
                 width={6}
                 textAlign='center'
               >
+                <Precios title='Lecciones individuales' prices={prices.one} />
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <Grid>
-            <Grid.Row
-              columns='equal'
-              verticalAlign='top'
-            >
+          <Grid
+            container
+            stackable
+            verticalAlign='middle'
+            //columns='equal'
+            style={{
+                //minHeight: `${this.state.height}px`,
+                marginBottom: '2em',
+                marginTop: '2em'
+            }}
+          >
+            <Grid.Row>
               <Grid.Column>
-                <Precios title='1 Persona' prices={prices.one} />
-              </Grid.Column>
-              <Grid.Column>
-                <Precios title='2 Personas' prices={prices.two} />
-              </Grid.Column>
-              <Grid.Column>
-                <Precios title='3 Personas' prices={prices.three} />
+                <p style={{ fontSize: '24px', textAlign: 'left' }}>
+                  Lecciones en grupos pequeños, para aprender con amigos, familia y compañeros.
+                </p>
               </Grid.Column>
             </Grid.Row>
+            <Grid.Row
+              columns='equal'
+            >
+              <Grid.Column>
+                <Precios title='Grupos de 2 personas' prices={prices.two} />
+              </Grid.Column>
+              <Grid.Column>
+                <Precios title='Grupos de 3 personas' prices={prices.three} />
+              </Grid.Column>
+            </Grid.Row>
+            <p style={{ fontSize: '24px', textAlign: 'left' }}>
+              Para grupos más grandes, escríbenos y encontraremos la mejor solución.
+            </p>
           </Grid>
         </Segment>
       </div>

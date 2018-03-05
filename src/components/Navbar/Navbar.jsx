@@ -8,7 +8,11 @@ import email from "./email.svg";
 export default class Navbar extends Component {
   render() {
     return (
-      <Menu secondary fixed='top'>
+      <Menu secondary fixed='top'
+        style={{
+          backgroundColor: '#ffffff'
+        }}
+      >
         <Menu.Item>
           <Header size='huge'>
             <Link to="/"
