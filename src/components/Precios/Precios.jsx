@@ -11,7 +11,7 @@ const TableExampleCollapsing = (props) => (
         props.title
       }
     </Header>
-    <Table basic='very' celled collapsing>
+    <Table basic='very' celled>
       <Table.Body>
         <Table.Row>
           <Table.Cell>

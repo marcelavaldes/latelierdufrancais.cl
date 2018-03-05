@@ -37,6 +37,9 @@ export default class Navbar extends Component {
               to="/clases"
             >
               <Image
+                style={{
+                  width: '2em'
+                }}
                 size='mini'
                 src={twitter}
               />
@@ -52,6 +55,9 @@ export default class Navbar extends Component {
               to="/cursos"
             >
               <Image
+                style={{
+                  width: '2em'
+                }}
                 size='mini'
                 src={facebook}
               />
@@ -64,6 +70,9 @@ export default class Navbar extends Component {
           >
             <Link to="/blog">
               <Image
+                style={{
+                  width: '2em'
+                }}
                 size='mini'
                 src={email}
               />
