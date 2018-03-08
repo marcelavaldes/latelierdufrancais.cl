@@ -46,7 +46,7 @@ class ClasesPage extends Component {
             //columns='equal'
             style={{
                 //minHeight: `${this.state.height}px`,
-                marginTop: '8em'
+                //marginTop: '8em'
             }}
           >
             <Grid.Row>
@@ -90,10 +90,17 @@ class ClasesPage extends Component {
             <Grid.Row
               columns='equal'
             >
-              <Grid.Column>
+
+              <Grid.Column
+                width={6}
+                textAlign='center'
+              >
                 <Precios title='Grupos de 2 personas' prices={prices.two} />
               </Grid.Column>
-              <Grid.Column>
+              <Grid.Column
+                width={6}
+                textAlign='center'
+              >
                 <Precios title='Grupos de 3 personas' prices={prices.three} />
               </Grid.Column>
             </Grid.Row>

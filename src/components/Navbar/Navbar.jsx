@@ -4,27 +4,43 @@ import { Menu, Header, Image } from 'semantic-ui-react';
 import twitter from "./twitter.svg";
 import facebook from "./facebook.svg";
 import email from "./email.svg";
+import logo from "./logo.svg";
 
 export default class Navbar extends Component {
   render() {
     return (
-      <Menu secondary fixed='top'
+      <Menu
+        secondary
+        fixed='top'
         style={{
           backgroundColor: '#ffffff'
         }}
       >
         <Menu.Item>
-          <Header size='huge'>
-            <Link to="/"
+          <Link to="/"
+          >
+            <Image
+              src={logo}
               style={{
-                color:'#000000'
-              }}
-            >
-              {
-                `${this.props.title}`
-              }
-            </Link>
-          </Header>
+                width: '12em',
+                //      position: 'fixed',
+                zIndex: 1000,
+                backgroundColor: '#ffffff'
+              }} />
+          </Link>
+          {/*
+            <Header size='huge'>
+              <Link to="/"
+            style={{
+            color:'#000000'
+            }}
+              >
+            {
+            `${this.props.title}`
+            }
+              </Link>
+            </Header>
+          */}
           {
             //    `${this.getLocalTitle()}`
           }

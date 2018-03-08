@@ -1,11 +1,30 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import Link from "gatsby-link"
-import { Container, Divider, Dropdown, Grid, Header, Image, List, Menu, Input, Icon, Segment } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
+import {
+  Button,
+  Container,
+  Divider,
+  Grid,
+  Header,
+  Icon,
+  Image,
+  List,
+  Menu,
+  Responsive,
+  Segment,
+  Sidebar,
+  Visibility,
+  Input
+} from 'semantic-ui-react'
+
 import config from "../../data/SiteConfig";
 import 'semantic-ui-css/semantic.min.css';
 import "./index.css";
 import Navbar from "../components/Navbar/Navbar"
+import Footer from "../components/Footer/Footer"
+import logo from "../components/Navbar/logo.svg";
 
 export default class MainLayout extends Component {
   state = { activeItem: 'home' }
@@ -52,15 +71,33 @@ export default class MainLayout extends Component {
     return (
       <Segment
         basic
+        style={{
+          overflow: 'hidden'
+        }}
       >
         <Helmet>
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <Navbar title={config.siteTitle}/>
-        <div style={this.props.transition && this.props.transition.style}>
+        {
+          //<Navbar title={config.siteTitle}/>
+        }
+        <div
+          //style={this.props.transition && this.props.transition.style}
+          style={{
+            //margin: '8rem 0'
+          }}
+        >
           {this.props.children()}
         </div>
+        {
+          //<Footer config={config}/>
+        }
+
+
+
+
+
       </Segment>
     );
   }

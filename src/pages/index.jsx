@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { Segment, Container, Grid, Header, List, Button } from "semantic-ui-react"
+import { Segment, Container, Grid, Header, List, Button, Table } from "semantic-ui-react"
 import Link from "gatsby-link"
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
@@ -37,40 +37,72 @@ class Index extends React.Component {
             container
             stackable
             verticalAlign='middle'
+            textAlign='center'
             //columns='equal'
             style={{
-                minHeight: `${this.state.height}px`,
+                minHeight: `${this.state.height-200}px`,
+                //marginTop: '8em'
             }}
           >
             <Grid.Row>
               <Grid.Column
                 width={10}
               >
-                <p style={{ fontSize: '24px', textAlign: 'justify' }}>
-                  Clases de francés a tu ritmo, con tu familia o amigos, para aprender el idioma y la cultura francesa. Locaciones en Talca y San Clemente, pronto Curicó y Cauquenes.
+                <p style={{ fontSize: '24px', textAlign: 'center' }}>
+                  Te invitamos a los talleres de francés.
                 </p>
-              </Grid.Column>
-              <Grid.Column
-                width={6}
-                textAlign='center'
-              >
+                <p style={{ fontSize: '24px', textAlign: 'center' }}>
 
-                <Link
-                  to="/clases"
+                  Clases particulares y cursos intensivos todo el año.
+                </p>
+                <p style={{ fontSize: '24px', textAlign: 'center' }}>
+                  Estamos en Talca y San Clemente.
+                </p>
+                <br />
+                <Grid
+                  columns='equal'
                 >
-                  <p style={{ fontSize: '24px' }}>
-                    ¿Quieres aprender?
-                  </p>
-                </Link>
-
-                <Link
-                  to="/cursos"
-                >
-                  <p style={{ fontSize: '24px' }}>
-                    ¿Quieres enseñar?
-                  </p>
-                </Link>
-
+                  <Grid.Row>
+                    <Grid.Column>
+                      <Link
+                        to='/clases'
+                      >
+                        <Header>
+                          Clases particulares
+                        </Header>
+                      </Link>
+                    </Grid.Column>
+                    <Grid.Column>
+                      <Link
+                        to='/cursos'
+                      >
+                        <Header>
+                          Cursos intensivos
+                        </Header>
+                      </Link>
+                    </Grid.Column>
+                  </Grid.Row>
+                  <Grid.Row>
+                    <Grid.Column>
+                      <Link
+                        to='/ensena'
+                      >
+                        <Header>
+                          ¿Quieres enseñar?
+                        </Header>
+                      </Link>
+                    </Grid.Column>
+                    <Grid.Column>
+                      <Link
+                        to='/colabora'
+                      >
+                        <Header>
+                          ¿Te gustaría colaborar?
+                        </Header>
+                      </Link>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
               </Grid.Column>
             </Grid.Row>
           </Grid>
