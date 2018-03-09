@@ -17,6 +17,7 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
+
 /*
 class CursosPage extends Component {
   render() {
@@ -31,6 +32,7 @@ class CursosPage extends Component {
 
 export default CursosPage;
 */
+
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
  * such things.

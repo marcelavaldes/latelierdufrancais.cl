@@ -24,6 +24,7 @@ import 'semantic-ui-css/semantic.min.css';
 import "./index.css";
 import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
+import ResponsiveContainer from "../components/ResponsiveContainer/ResponsiveContainer"
 import logo from "../components/Navbar/logo.svg";
 
 export default class MainLayout extends Component {
@@ -69,36 +70,24 @@ export default class MainLayout extends Component {
   }
   render() {
     return (
-      <Segment
-        basic
-        style={{
-          overflow: 'hidden'
-        }}
-      >
+      <div>
         <Helmet>
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        {
-          //<Navbar title={config.siteTitle}/>
-        }
-        <div
-          //style={this.props.transition && this.props.transition.style}
-          style={{
-            //margin: '8rem 0'
-          }}
-        >
-          {this.props.children()}
-        </div>
-        {
-          //<Footer config={config}/>
-        }
-
-
-
-
-
-      </Segment>
+        <ResponsiveContainer>
+          <div
+            style={{
+              marginTop: '50px'
+            }}
+          >
+            {this.props.children()}
+          </div>
+          {
+            //<Footer config={config}/>
+          }
+        </ResponsiveContainer>
+      </div>
     );
   }
 }
