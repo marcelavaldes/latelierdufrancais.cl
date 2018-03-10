@@ -84,7 +84,7 @@ export default class MainLayout extends Component {
             {this.props.children()}
           </div>
           {
-            //<Footer config={config}/>
+            <Footer config={config}/>
           }
         </ResponsiveContainer>
       </div>

@@ -77,8 +77,8 @@ class DesktopContainer extends Component {
       <Responsive {...Responsive.onlyComputer}>
         <Visibility once={false} /*onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}*/>
           <Menu
-            fixed={fixed ? 'top' : null}
-            //fixed='top'
+            //fixed={fixed ? 'top' : null}
+            fixed='top'
             //inverted={!fixed}
             pointing={!fixed}
             secondary={!fixed}
@@ -209,7 +209,9 @@ class MobileContainer extends Component {
               <Link
                 to='/'
               >
-                {config.siteTitle}
+                {
+                  //config.siteTitle
+                }
               </Link>
             </Header>
           </Menu.Item>
