@@ -19,11 +19,7 @@ class Footer extends Component {
         <Container>
           <Grid divided stackable>
             <Grid.Row>
-              <Grid.Column width={9}>
-                <Escribenos />
-              </Grid.Column>
-              {/*
-                <Grid.Column width={3}>
+              <Grid.Column width={4}>
                 <Header as='h4' content='About' />
                 <List link>
                   <List.Item as='a'>Sitemap</List.Item>
@@ -31,8 +27,8 @@ class Footer extends Component {
                   <List.Item as='a'>Religious Ceremonies</List.Item>
                   <List.Item as='a'>Gazebo Plans</List.Item>
                 </List>
-                </Grid.Column>
-                <Grid.Column width={3}>
+              </Grid.Column>
+              <Grid.Column width={4}>
                 <Header as='h4' content='Services' />
                 <List link>
                   <List.Item as='a'>Banana Pre-Order</List.Item>
@@ -40,9 +36,9 @@ class Footer extends Component {
                   <List.Item as='a'>How To Access</List.Item>
                   <List.Item as='a'>Favorite X-Men</List.Item>
                 </List>
-                </Grid.Column>
-              */}
-              <Grid.Column width={7}>
+              </Grid.Column>
+
+              <Grid.Column width={8}>
                 <Header as='h4'>Footer Header</Header>
                 <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
               </Grid.Column>

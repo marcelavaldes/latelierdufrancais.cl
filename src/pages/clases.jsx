@@ -37,6 +37,7 @@ class ClasesPage extends Component {
           style={{
             //backgroundColor: 'rgba(200,200,0,.4)',
             minHeight: `${this.state.height}px`,
+            padding: '8em 0em'
           }}
         >
           <Grid
@@ -53,11 +54,11 @@ class ClasesPage extends Component {
               <Grid.Column
                 width={10}
               >
-                <p style={{ fontSize: '24px', textAlign: 'left' }}>
+                <Header as='h3' style={{ fontSize: '2em' }}>Lecciones individuales</Header>
+                <p style={{ fontSize: '1.33em' }}>
                   Ofrecemos pack de lecciones particulares por horas para que dispongas de ellas como tu quieras.
                 </p>
-                <br />
-                <p style={{ fontSize: '24px', textAlign: 'left' }}>
+                <p style={{ fontSize: '1.33em' }}>
                   Las tarifas son las mismas para todos los niveles y todo el material es provisto por nosotros.
                 </p>
               </Grid.Column>

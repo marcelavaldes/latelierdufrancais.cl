@@ -83,6 +83,9 @@ class DesktopContainer extends Component {
             pointing={!fixed}
             secondary={!fixed}
             size='large'
+            style={{
+              backgroundColor: 'rgba(255,255,255,.8)'
+            }}
           >
             <Container>
               <Menu.Item active>
