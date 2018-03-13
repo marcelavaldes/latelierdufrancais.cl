@@ -1,35 +1,16 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-import Link from "gatsby-link"
 import PropTypes from 'prop-types'
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Responsive,
-  Segment,
-  Sidebar,
-  Visibility,
-  Input
-} from 'semantic-ui-react'
+
+import ResponsiveContainer from "../components/ResponsiveContainer/ResponsiveContainer"
+import Footer from "../components/Footer/Footer"
 
 import config from "../../data/SiteConfig";
+import pattern from './pattern.svg'
 import 'semantic-ui-css/semantic.min.css';
 import "./index.css";
-import Navbar from "../components/Navbar/Navbar"
-import Footer from "../components/Footer/Footer"
-import ResponsiveContainer from "../components/ResponsiveContainer/ResponsiveContainer"
-import logo from "../components/Navbar/logo.svg";
 
 export default class MainLayout extends Component {
-  state = { activeItem: 'home' }
-
   getLocalTitle() {
     function capitalize(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
@@ -78,14 +59,15 @@ export default class MainLayout extends Component {
         <ResponsiveContainer>
           <div
             style={{
-              marginTop: '50px'
+              marginTop: '50px',
+              background: `url(${pattern})`,
+              backgroundAttachment: 'fixed',
+              backgroundSize: 'cover'
             }}
           >
             {this.props.children()}
           </div>
-          {
-            <Footer config={config}/>
-          }
+          <Footer config={config}/>
         </ResponsiveContainer>
       </div>
     );

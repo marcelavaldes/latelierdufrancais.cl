@@ -83,7 +83,8 @@ class ClasesPage extends Component {
           >
             <Grid.Row>
               <Grid.Column>
-                <p style={{ fontSize: '24px', textAlign: 'left' }}>
+                <Header as='h3' style={{ fontSize: '2em' }}>Lecciones para grupos pequeños</Header>
+                <p style={{ fontSize: '1.33em' }}>
                   Lecciones en grupos pequeños, para aprender con amigos, familia y compañeros.
                 </p>
               </Grid.Column>
@@ -105,9 +106,15 @@ class ClasesPage extends Component {
                 <Precios title='Grupos de 3 personas' prices={prices.three} />
               </Grid.Column>
             </Grid.Row>
-            <p style={{ fontSize: '24px', textAlign: 'left' }}>
-              Para grupos más grandes, escríbenos y encontraremos la mejor solución.
-            </p>
+            <Grid.Row>
+              <Grid.Column textAlign='center'>
+                <Container text>
+                  <p style={{ fontSize: '1.33em' }}>
+                    Para grupos más grandes, escríbenos y encontraremos la mejor solución.
+                  </p>
+                </Container>
+              </Grid.Column>
+            </Grid.Row>
           </Grid>
         </Segment>
       </div>

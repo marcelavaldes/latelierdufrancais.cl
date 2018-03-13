@@ -4,19 +4,20 @@ import { Segment, Container, Grid, Header, List, Button, Table, Divider, Image, 
 import Link from "gatsby-link"
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
+import pattern from "../layouts/pattern.svg"
 
 const HomepageHeading = ({ mobile }) => (
   <Container text textAlign='center'>
     <Header
-      as='h1'
+      as={mobile ? 'h3' : 'h1'}
       content={config.siteTitle}
       //inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
-        fontWeight: 'normal',
-        marginTop: mobile ? '2em' : '4em',
+        fontWeight: mobile ? false : 'normal',
+        marginTop: mobile ? '3em' : '4em',
         marginBottom: mobile ? '0.5em' : '0em',
-          }}
+      }}
     />
     <Header
       as='h2'
@@ -26,7 +27,7 @@ const HomepageHeading = ({ mobile }) => (
       //inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
-        fontWeight: 'normal',
+          fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
@@ -64,6 +65,8 @@ class Index extends React.Component {
           basic
           style={{
             minHeight: `${this.state.height}px`,
+            //background: `url(${pattern})`,
+            //backgroundAttachment: 'fixed'
           }}
         >
           <Responsive {...Responsive.onlyMobile}>
@@ -75,16 +78,16 @@ class Index extends React.Component {
           </Responsive>
         </Segment>
 
-        <Segment style={{ padding: '8em 0em' }} vertical>
+        <Segment style={{ padding: '8em 0em', backgroundColor: 'rgba(255,255,255,.8)' }} vertical>
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
               <Grid.Column width={8}>
-                <Header as='h3' style={{ fontSize: '2em' }}>We Help Companies and Companions</Header>
+                <Header as='h3' style={{ fontSize: '2em' }}>Clases particulares</Header>
                 <p style={{ fontSize: '1.33em' }}>
                   We can give your company superpowers to do things that they never thought possible. Let us delight
                   your customers and empower your needs... through pure data analytics.
                 </p>
-                <Header as='h3' style={{ fontSize: '2em' }}>We Make Bananas That Can Dance</Header>
+                <Header as='h3' style={{ fontSize: '2em' }}>Cursos</Header>
                 <p style={{ fontSize: '1.33em' }}>
                   Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.
                 </p>
@@ -110,11 +113,11 @@ class Index extends React.Component {
           <Grid celled='internally' columns='equal' stackable>
             <Grid.Row textAlign='center'>
               <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as='h3' style={{ fontSize: '2em' }}>"What a Company"</Header>
+                <Header as='h3' style={{ fontSize: '2em' }}>¿Te gustaría enseñar?</Header>
                 <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
               </Grid.Column>
               <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as='h3' style={{ fontSize: '2em' }}>"I shouldn't have gone with their competitor."</Header>
+                <Header as='h3' style={{ fontSize: '2em' }}>¿Te gustaría colaborar?</Header>
                 <p style={{ fontSize: '1.33em' }}>
                   <Image avatar src="http://via.placeholder.com/350x150" />
                   <b>Nan</b> Chief Fun Officer Acme Toys
