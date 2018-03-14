@@ -82,7 +82,7 @@ class DesktopContainer extends Component {
             //inverted={!fixed}
             //pointing={!fixed}
             //secondary={!fixed}
-            size='large'
+            size='small'
             style={{
               backgroundColor: 'rgba(255,255,255,.8)',
               //display: `${ fixed ? 'block' : 'none' }`
