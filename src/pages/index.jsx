@@ -4,7 +4,6 @@ import { Segment, Container, Grid, Header, List, Button, Table, Divider, Image, 
 import Link from "gatsby-link"
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
-import pattern from "../layouts/pattern.svg"
 
 const HomepageHeading = ({ mobile }) => (
   <Container text textAlign='center'>
@@ -63,8 +62,6 @@ class Index extends React.Component {
           basic
           style={{
             minHeight: `${this.state.height}px`,
-            //background: `url(${pattern})`,
-            //backgroundAttachment: 'fixed'
           }}
         >
           <Responsive {...Responsive.onlyMobile}>
