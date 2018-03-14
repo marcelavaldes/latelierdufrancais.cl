@@ -75,20 +75,22 @@ class DesktopContainer extends Component {
 
     return (
       <Responsive {...Responsive.onlyComputer}>
-        <Visibility once={false} /*onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}*/>
+        <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu} style={{height: 400, position: 'absolute'}}>
           <Menu
             //fixed={fixed ? 'top' : null}
             fixed='top'
             //inverted={!fixed}
-            pointing={!fixed}
-            secondary={!fixed}
+            //pointing={!fixed}
+            //secondary={!fixed}
             size='large'
             style={{
-              backgroundColor: 'rgba(255,255,255,.8)'
+              backgroundColor: 'rgba(255,255,255,.8)',
+              //display: `${ fixed ? 'block' : 'none' }`
+              opacity: `${ fixed ? 1 : 0 }`
             }}
           >
             <Container>
-              <Menu.Item active>
+              <Menu.Item active header>
                 <Link
                   to='/'
                 >

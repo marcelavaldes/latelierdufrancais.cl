@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-import ResponsiveContainer from "../components/ResponsiveContainer/ResponsiveContainer"
-import Footer from "../components/Footer/Footer"
+import ResponsiveContainer from "../components/ResponsiveContainer/ResponsiveContainer";
+import Footer from "../components/Footer/Footer";
 
 import config from "../../data/SiteConfig";
-import pattern from './pattern.svg'
-import 'semantic-ui-css/semantic.min.css';
+import pattern from "./pattern.svg";
+import "semantic-ui-css/semantic.min.css";
 import "./index.css";
 
 export default class MainLayout extends Component {
@@ -51,23 +51,22 @@ export default class MainLayout extends Component {
   }
   render() {
     return (
-      <div>
+      <div
+        style={{
+          background: `url(${pattern})`,
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover"
+        }}
+      >
         <Helmet>
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
         <ResponsiveContainer>
-          <div
-            style={{
-              marginTop: '50px',
-              background: `url(${pattern})`,
-              backgroundAttachment: 'fixed',
-              backgroundSize: 'cover'
-            }}
-          >
-            {this.props.children()}
-          </div>
-          <Footer config={config}/>
+          {
+            this.props.children()
+          }
+          <Footer config={config} />
         </ResponsiveContainer>
       </div>
     );

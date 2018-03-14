@@ -21,9 +21,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content='Te invitamos a los talleres de francés.
-      Clases particulares y cursos intensivos todo el año.
-      Estamos en Talca y San Clemente.'
+      content='Aprende a tu ritmo con clases personalizadas de francés en Talca y San Clemente.'
       //inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
@@ -46,7 +44,7 @@ class Index extends React.Component {
     this.state = { height: 800 }
   }
   setHeight() {
-    const height = window.innerHeight - 70;
+    const height = window.innerHeight;
     this.setState({ height: height })
   }
   componentDidMount() {
@@ -78,7 +76,7 @@ class Index extends React.Component {
           </Responsive>
         </Segment>
 
-        <Segment style={{ padding: '8em 0em', backgroundColor: 'rgba(255,255,255,.8)' }} vertical>
+        <Segment style={{ padding: '8em 0em', backgroundColor: 'rgba(255,255,255,.8)' }} vertical raised>
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
               <Grid.Column width={8}>
