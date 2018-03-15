@@ -21,7 +21,7 @@ export default class MainLayout extends Component {
       .replace("/", "");
     let title = "";
     if (currentPath === "") {
-      title = "Home";
+      title = "";
     } else if (currentPath === "tags/") {
       title = "Tags";
     } else if (currentPath === "categories/") {
@@ -62,7 +62,7 @@ export default class MainLayout extends Component {
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <ResponsiveContainer>
+        <ResponsiveContainer title={this.getLocalTitle()}>
           {
             this.props.children()
           }

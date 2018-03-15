@@ -36,7 +36,7 @@ class ClasesPage extends Component {
           basic
           style={{
             //backgroundColor: 'rgba(200,200,0,.4)',
-            minHeight: `${this.state.height}px`,
+            //minHeight: `${this.state.height}px`,
             padding: '8em 0em'
           }}
         >
@@ -117,6 +117,64 @@ class ClasesPage extends Component {
             </Grid.Row>
           </Grid>
         </Segment>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     );
   }
