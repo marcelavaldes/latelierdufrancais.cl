@@ -77,7 +77,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
 
           createPage({
-            path: edge.node.fields.slug,
+            path: `/blog/${edge.node.fields.slug}`,
             component: postPage,
             context: {
               slug: edge.node.fields.slug

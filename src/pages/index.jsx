@@ -66,7 +66,7 @@ class Index extends React.Component {
   render() {
     return (
       <div
-        style={this.props.transition && this.props.transition.style}
+        //style={this.props.transition && this.props.transition.style}
         className="index-container"
       >
         <Helmet title={config.siteTitle} />

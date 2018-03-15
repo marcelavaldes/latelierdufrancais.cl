@@ -26,10 +26,18 @@ import config from "../../../data/SiteConfig";
  * It can be more complicated, but you can create really flexible markup.
  */
 class DesktopContainer extends Component {
-  state = {};
+  state = {
+    fixed: true
+  };
 
-  hideFixedMenu = () => this.setState({ fixed: this.props.title == "" ? false : true });
-  showFixedMenu = () => this.setState({ fixed: true });
+  hideFixedMenu = () => {
+    this.setState({ fixed: this.props.title == "" ? false : true });
+    console.log(this.state);
+  }
+  showFixedMenu = () => {
+    this.setState({ fixed: true });
+    console.log(this.state);
+  }
 
   render() {
     const { children } = this.props;
@@ -53,7 +61,7 @@ class DesktopContainer extends Component {
             size="small"
             style={{
               backgroundColor: "rgba(255,255,255,.8)",
-              //opacity: `${fixed ? 1 : 0}`
+              opacity: `${fixed ? 1 : 0}`
             }}
           >
             <Container>
@@ -73,7 +81,7 @@ class DesktopContainer extends Component {
                 <Button
                   as="a" /*inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}*/
                 >
-                  Sign Up
+                  Escríbenos
                 </Button>
               </Menu.Item>
             </Container>
