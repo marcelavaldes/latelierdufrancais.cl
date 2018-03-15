@@ -53,7 +53,7 @@ class DesktopContainer extends Component {
             size="small"
             style={{
               backgroundColor: "rgba(255,255,255,.8)",
-              opacity: `${fixed ? 1 : 0}`
+              //opacity: `${fixed ? 1 : 0}`
             }}
           >
             <Container>
