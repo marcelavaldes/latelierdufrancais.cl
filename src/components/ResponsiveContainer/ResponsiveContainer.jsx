@@ -46,47 +46,6 @@ class DesktopContainer extends Component {
 
     return (
       <Responsive {...Responsive.onlyComputer}>
-        <Visibility
-          once={false}
-          onBottomPassed={this.showFixedMenu}
-          onBottomPassedReverse={this.hideFixedMenu}
-          style={{
-            height: 200,
-            position: "absolute"
-          }}
-        >
-          <Menu
-            fixed="top"
-            secondary={true}
-            size="small"
-            style={{
-              backgroundColor: "rgba(255,255,255,.8)",
-              opacity: `${fixed ? 1 : 0}`
-            }}
-          >
-            <Container>
-              <Menu.Item header>
-                <Link to="/">{config.siteTitle}</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/clases">Clases</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/cursos">Cursos</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/colabora">Colabora</Link>
-              </Menu.Item>
-              <Menu.Item position="right">
-                <Button
-                  as="a" /*inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}*/
-                >
-                  Escríbenos
-                </Button>
-              </Menu.Item>
-            </Container>
-          </Menu>
-        </Visibility>
         {children}
       </Responsive>
     );
