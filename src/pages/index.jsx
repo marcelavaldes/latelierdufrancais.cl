@@ -118,7 +118,7 @@ class Index extends React.Component {
                   bordered
                   rounded
                   size="large"
-                  src="http://via.placeholder.com/350x150"
+                  src="//via.placeholder.com/350x150"
                 />
               </Grid.Column>
             </Grid.Row>
@@ -146,7 +146,7 @@ class Index extends React.Component {
                   ¿Te gustaría colaborar?
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
-                  <Image avatar src="http://via.placeholder.com/350x150" />
+                  <Image avatar src="//via.placeholder.com/350x150" />
                   <b>Nan</b> Chief Fun Officer Acme Toys
                 </p>
               </Grid.Column>

@@ -67,7 +67,7 @@ export default class MainLayout extends Component {
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <TopBar config={config}/>
+        <TopBar currentPage={this.getLocalTitle()} config={config}/>
         {this.props.children()}
         <Footer config={config} />
       </div>

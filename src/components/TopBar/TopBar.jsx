@@ -21,16 +21,16 @@ import {
 import config from "../../../data/SiteConfig";
 
 export default class TopBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { fixed: true }
+  constructor() {
+    super();
+    this.state = { }
     this.hideFixedMenu = this.hideFixedMenu.bind(this)
     this.showFixedMenu = this.showFixedMenu.bind(this)
   }
 
   hideFixedMenu = () => {
     this.setState({
-      fixed: false
+      fixed: this.props.currentPage=="" ? false : true
     });
     console.log(this.state);
   }
@@ -41,7 +41,9 @@ export default class TopBar extends Component {
     });
     console.log(this.state);
   }
-
+  componentDidMount() {
+    this.hideFixedMenu();
+  }
   render() {
     const { fixed } = this.state;
     return (
