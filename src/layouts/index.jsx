@@ -1,35 +1,18 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-import Link from "gatsby-link";
 import PropTypes from "prop-types";
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Responsive,
-  Segment,
-  Sidebar,
-  Visibility,
-  Input
-} from "semantic-ui-react";
-import ResponsiveContainer from "../components/ResponsiveContainer/ResponsiveContainer";
+
+import TopBar from "../components/TopBar/TopBar";
 import Footer from "../components/Footer/Footer";
 
 import config from "../../data/SiteConfig";
-import pattern from "./pattern.svg";
+
 import "semantic-ui-css/semantic.min.css";
 import "./index.css";
 
+import pattern from "./pattern.svg";
+
 export default class MainLayout extends Component {
-  state = {
-    fixed: true
-  }
   getLocalTitle() {
     function capitalize(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
@@ -68,20 +51,8 @@ export default class MainLayout extends Component {
     }
     return title;
   }
-  hideFixedMenu = () => {
-    this.setState({
-      fixed: false
-    });
-    console.log(this.state);
-  }
-  showFixedMenu = () => {
-    this.setState({
-      fixed: true
-    });
-    console.log(this.state);
-  }
+
   render() {
-    const { fixed } = this.state;
     return (
       <div
         style={{
@@ -94,50 +65,8 @@ export default class MainLayout extends Component {
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <Visibility
-          once={false}
-          onBottomPassed={this.showFixedMenu}
-          onBottomPassedReverse={this.hideFixedMenu}
-          style={{
-              height: 200,
-              position: "absolute"
-          }}
-        >
-          <Menu
-            fixed="top"
-            secondary={true}
-            size="small"
-            style={{
-                backgroundColor: "rgba(255,255,255,.8)",
-                opacity: `${fixed ? 1 : 0}`
-            }}
-          >
-            <Container>
-              <Menu.Item header>
-                <Link to="/">{config.siteTitle}</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/clases">Clases</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/cursos">Cursos</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/colabora">Colabora</Link>
-              </Menu.Item>
-              <Menu.Item position="right">
-                <Button
-                  as="a" /*inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}*/
-                >
-                  Escríbenos
-                </Button>
-              </Menu.Item>
-            </Container>
-          </Menu>
-        </Visibility>
-        {
-          this.props.children()
-        }
+        <TopBar config={config}/>
+        {this.props.children()}
         <Footer config={config} />
       </div>
     );
