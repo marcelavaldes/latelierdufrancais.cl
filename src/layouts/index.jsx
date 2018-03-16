@@ -10,7 +10,7 @@ import config from "../../data/SiteConfig";
 import "semantic-ui-css/semantic.min.css";
 import "./index.css";
 
-import pattern from "./pattern.svg";
+import pattern from "./pattern1.svg";
 
 export default class MainLayout extends Component {
   getLocalTitle() {
@@ -57,8 +57,10 @@ export default class MainLayout extends Component {
       <div
         style={{
           background: `url(${pattern})`,
-          backgroundAttachment: "fixed",
-          backgroundSize: "cover"
+          //backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat no-repeat",
+          backgroundPosition: "center center"
         }}
       >
         <Helmet>

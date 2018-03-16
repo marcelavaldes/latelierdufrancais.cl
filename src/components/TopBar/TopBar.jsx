@@ -24,6 +24,8 @@ export default class TopBar extends Component {
   constructor(props) {
     super(props);
     this.state = { fixed: true }
+    this.hideFixedMenu = this.hideFixedMenu.bind(this)
+    this.showFixedMenu = this.showFixedMenu.bind(this)
   }
 
   hideFixedMenu = () => {
