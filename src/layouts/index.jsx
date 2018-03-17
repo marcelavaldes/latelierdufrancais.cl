@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import PropTypes from "prop-types";
-
+import { Segment, Container, Header } from "semantic-ui-react"
 import TopBar from "../components/TopBar/TopBar";
 import Footer from "../components/Footer/Footer";
 
@@ -33,7 +33,7 @@ export default class MainLayout extends Component {
     } else if (currentPath === "cursos") {
       title = "Cursos";
     } else if (currentPath === "clases") {
-      title = "Clases";
+      title = "Clases particulares";
     } else if (currentPath.indexOf("posts")) {
       title = "Blog";
     } else if (currentPath.indexOf("tags/")) {
@@ -57,7 +57,7 @@ export default class MainLayout extends Component {
       <div
         style={{
           background: `url(${pattern})`,
-          //backgroundAttachment: "fixed",
+          backgroundAttachment: "fixed",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat no-repeat",
           backgroundPosition: "center center"
@@ -68,7 +68,23 @@ export default class MainLayout extends Component {
           <meta name="description" content={config.siteDescription} />
         </Helmet>
         <TopBar currentPage={this.getLocalTitle()} config={config}/>
-        {this.props.children()}
+        <Segment
+          basic
+          style={{
+            padding: "8em 0em 0em 0em",
+            margin: 0
+          }}
+        >
+          <Container>
+            <Header
+              as='h1'
+              content={this.getLocalTitle()}
+            />
+          </Container>
+        </Segment>
+        {
+          this.props.children()
+        }
         <Footer config={config} />
       </div>
     );

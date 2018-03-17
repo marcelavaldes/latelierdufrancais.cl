@@ -25,8 +25,8 @@ const HomepageHeading = ({ mobile }) => (
       style={{
         fontSize: mobile ? "2em" : "4em",
         fontWeight: mobile ? false : "normal",
-        marginTop: mobile ? "5em" : "5em",
-        marginBottom: mobile ? "0.5em" : "1em"
+        marginTop: mobile ? "0em" : "0em",
+        marginBottom: mobile ? "0em" : ".4em"
       }}
     />
     <Header
@@ -35,11 +35,15 @@ const HomepageHeading = ({ mobile }) => (
       style={{
         fontSize: mobile ? "1.5em" : "1.7em",
         fontWeight: "normal",
-        marginTop: mobile ? "0.5em" : "1.5em",
-        marginBottom: mobile ? "0.5em" : "1em"
+        //marginTop: mobile ? "0.5em" : "1.5em",
+        marginBottom: mobile ? "1em" : "1.5em"
       }}
     />
-    <Button>
+    <Button
+      style={{
+        marginBottom: mobile ? "8em" : "3em"
+      }}
+    >
       Leer más...
       <Icon name="right arrow" />
     </Button>
@@ -66,24 +70,22 @@ class Index extends React.Component {
   render() {
     return (
       <div
-        //style={this.props.transition && this.props.transition.style}
+        style={this.props.transition && this.props.transition.style}
         className="index-container"
       >
         <Helmet title={config.siteTitle} />
 
-        <Segment
-          basic
-          style={{
-            minHeight: `${this.state.height}px`
-          }}
-        >
-          <Responsive {...Responsive.onlyMobile}>
-            <HomepageHeading mobile />
-          </Responsive>
-
-          <Responsive {...Responsive.onlyComputer}>
-            <HomepageHeading />
-          </Responsive>
+        <Segment basic style={{ minHeight: `${this.state.height-136}px` }}>
+          <Grid style={{ minHeight: `${this.state.height-136}px` }}>
+            <Grid.Column verticalAlign='middle'>
+              <Responsive {...Responsive.onlyMobile}>
+                <HomepageHeading mobile />
+              </Responsive>
+              <Responsive {...Responsive.onlyComputer}>
+                <HomepageHeading />
+              </Responsive>
+            </Grid.Column>
+          </Grid>
         </Segment>
 
         <Segment
@@ -101,9 +103,8 @@ class Index extends React.Component {
                   Clases particulares
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
-                  We can give your company superpowers to do things that they
-                  never thought possible. Let us delight your customers and
-                  empower your needs... through pure data analytics.
+                  Clases particulares individuales o para grupos pequeños, donde programas las sesiones según tu disponibilidad.
+                  Si te gustaría aprender francés con un amigo, tu compañero o tu familia, y tienes poco tiempo, ésta puede ser tu mejor opción.
                 </p>
                 <Header as="h3" style={{ fontSize: "2em" }}>
                   Cursos
@@ -122,11 +123,13 @@ class Index extends React.Component {
                 />
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row>
+            {/*
+              <Grid.Row>
               <Grid.Column textAlign="center">
                 <Button size="huge">Check Them Out</Button>
               </Grid.Column>
-            </Grid.Row>
+              </Grid.Row>
+            */}
           </Grid>
         </Segment>
 

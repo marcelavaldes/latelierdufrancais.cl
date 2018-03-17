@@ -41,53 +41,144 @@ export default class TopBar extends Component {
     });
     console.log(this.state);
   }
+  toggleSideMenu = () => {
+    this.setState((prevState) => ({ sideMenu: !prevState.sideMenu }))
+  }
   componentDidMount() {
-    this.hideFixedMenu();
+    //this.hideFixedMenu();
   }
   render() {
-    const { fixed } = this.state;
+    const { fixed, sideMenu } = this.state;
     return (
-      <Visibility
-        once={false}
-        onBottomPassed={this.showFixedMenu}
-        onBottomPassedReverse={this.hideFixedMenu}
-        style={{
+      <div>
+        <Visibility
+          once={false}
+          onBottomPassed={this.showFixedMenu}
+          onBottomPassedReverse={this.hideFixedMenu}
+          style={{
             height: 200,
             position: "absolute"
-        }}
-      >
-        <Menu
-          fixed="top"
-          secondary={true}
-          size="small"
-          style={{
-              backgroundColor: "rgba(255,255,255,.8)",
-              opacity: `${fixed ? 1 : 0}`
           }}
         >
-          <Container>
-            <Menu.Item header>
-              <Link to="/">{config.siteTitle}</Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link to="/clases">Clases</Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link to="/cursos">Cursos</Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link to="/colabora">Colabora</Link>
-            </Menu.Item>
-            <Menu.Item position="right">
-              <Button
-                as="a" /*inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}*/
+          <Menu
+            fixed="top"
+            secondary={true}
+            size="small"
+            style={{
+              backgroundColor: "rgba(255,255,255,.8)",
+              //opacity: `${fixed ? 1 : 0}`
+            }}
+          >
+            <Container>
+              <Responsive {...Responsive.onlyMobile}
+                style={{
+                  display: 'inherit'
+                }}
               >
-                Escríbenos
-              </Button>
-            </Menu.Item>
-          </Container>
-        </Menu>
-      </Visibility>
+                <Menu.Item
+                  onClick={this.toggleSideMenu}
+                  style={{
+                    marginRight: 0
+                  }}
+                >
+                  <Icon name="sidebar" />
+                </Menu.Item>
+              </Responsive>
+              <Menu.Item header
+                style={{
+                  paddingLeft: 0,
+                  marginLeft: 0
+                }}
+              >
+                <Link to="/" style={{fontSize:'1.3em'}}>{config.siteTitle}</Link>
+              </Menu.Item>
+              <Responsive {...Responsive.onlyComputer}
+                style={{
+                  display: 'inherit'
+                }}
+              >
+
+                <Menu.Item>
+                  <Link to="/clases">Clases</Link>
+                </Menu.Item>
+                <Menu.Item>
+                  <Link to="/cursos">Cursos</Link>
+                </Menu.Item>
+                <Menu.Item>
+                  <Link to="/colabora">Colabora</Link>
+                </Menu.Item>
+              </Responsive>
+              <Menu.Item position="right">
+                <Button
+                  as="a" /*inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}*/
+                >
+                  Escríbenos
+                </Button>
+              </Menu.Item>
+            </Container>
+          </Menu>
+        </Visibility>
+        <Sidebar
+          as={Menu}
+          width='wide'
+          animation='overlay'
+          direction='left'
+          visible={sideMenu}
+          vertical
+          style={{
+            backgroundColor: 'rgba(255,255,255,0)',
+            top: 41,
+            boxShadow: '0 0 20px rgba(34, 36, 38, 0)',
+            border: 0,
+            width: '100vh'
+          }}
+        >
+          <Menu.Item
+            onClick={this.toggleSideMenu}
+            href="/clases"
+            name='clases'
+            style={{
+              backgroundColor: 'rgba(255,255,255,.8)',
+              border: 0,
+            }}
+          >
+            Clases particulares
+          </Menu.Item>
+          <Menu.Item
+            onClick={this.toggleSideMenu}
+            href="/cursos"
+            name='cursos'
+            style={{
+              backgroundColor: 'rgba(255,255,255,.8)',
+              border: 0,
+            }}
+          >
+            Cursos
+          </Menu.Item>
+          <Menu.Item
+            onClick={this.toggleSideMenu}
+            href="/ensena"
+            name='ensena'
+            style={{
+              backgroundColor: 'rgba(255,255,255,.8)',
+              border: 0,
+            }}
+          >
+            Enseña
+          </Menu.Item>
+          <Menu.Item
+            onClick={this.toggleSideMenu}
+            href="/colabora"
+            name='colabora'
+            style={{
+              backgroundColor: 'rgba(255,255,255,.8)',
+              border: 0,
+            }}
+          >
+            Colabora
+          </Menu.Item>
+        </Sidebar>
+      </div>
     );
   }
 }
