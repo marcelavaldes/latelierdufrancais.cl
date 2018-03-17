@@ -21,75 +21,40 @@ import {
 import config from "../../../data/SiteConfig";
 
 class DesktopNavbar extends Component {
-  constructor() {
-    super();
-    this.state = { }
-    this.hideFixedMenu = this.hideFixedMenu.bind(this)
-    this.showFixedMenu = this.showFixedMenu.bind(this)
-  }
-
-  hideFixedMenu = () => {
-    this.setState({
-      fixed: this.props.currentPage=="" ? false : true
-    });
-    console.log(this.state);
-  }
-
-  showFixedMenu = () => {
-    this.setState({
-      fixed: true
-    });
-    console.log(this.state);
-  }
-
-  componentDidMount() {
-    this.hideFixedMenu();
-  }
-
   render() {
-    const { fixed } = this.state;
     return (
-      <div>
-          <Menu
-            fixed="top"
-            secondary={true}
-            size="small"
-            style={{
-              backgroundColor: "rgba(255,255,255,.8)",
-              //opacity: `${fixed ? 1 : 0}`
-            }}
-          >
-            <Container>
-              <Menu.Item header
-                style={{
-                  paddingLeft: 0,
-                  marginLeft: 0
-                }}
+      <Menu
+        fixed="top"
+        secondary={true}
+        size="small"
+        style={{
+          backgroundColor: "rgba(255,255,255,.8)",
+        }}
+      >
+        <Container>
+          <Menu.Item header>
+            <Link to="/" style={{fontSize:'1.3em'}}>{ this.props.currentPage=="" ? null : config.siteTitle }</Link>
+          </Menu.Item>
+          <Menu.Menu  position="right">
+            <Menu.Item>
+              <Link to="/clases">Clases</Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link to="/cursos">Cursos</Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Button
+                as="a" style={{ marginLeft: '0.5em' }}
               >
-                <Link to="/" style={{fontSize:'1.3em'}}>{config.siteTitle}</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/clases">Clases</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/cursos">Cursos</Link>
-              </Menu.Item>
-              <Menu.Item>
-                <Link to="/colabora">Colabora</Link>
-              </Menu.Item>
-              <Menu.Item position="right">
-                <Button
-                  as="a" style={{ marginLeft: '0.5em' }}
-                >
-                  Escríbenos
-                </Button>
-              </Menu.Item>
-            </Container>
-          </Menu>
-        </div>
-    );
-  }
-}
+                Escríbenos
+              </Button>
+            </Menu.Item>
+          </Menu.Menu>
+        </Container>
+      </Menu>
+        );
+        }
+        }
 
 DesktopNavbar.propTypes = {
 };
@@ -97,35 +62,15 @@ DesktopNavbar.propTypes = {
 class MobileNavbar extends Component {
   constructor() {
     super();
-    this.state = { }
-    this.hideFixedMenu = this.hideFixedMenu.bind(this)
-    this.showFixedMenu = this.showFixedMenu.bind(this)
-  }
-
-  hideFixedMenu = () => {
-    this.setState({
-      fixed: this.props.currentPage=="" ? false : true
-    });
-    console.log(this.state);
-  }
-
-  showFixedMenu = () => {
-    this.setState({
-      fixed: true
-    });
-    console.log(this.state);
+    this.state = {}
   }
 
   toggleSideMenu = () => {
     this.setState((prevState) => ({ sideMenu: !prevState.sideMenu }))
   }
 
-  componentDidMount() {
-    this.hideFixedMenu();
-  }
-
   render() {
-    const { fixed, sideMenu } = this.state;
+    const { sideMenu } = this.state;
     return (
       <div>
         <Menu
@@ -137,31 +82,38 @@ class MobileNavbar extends Component {
               //opacity: `${fixed ? 1 : 0}`
           }}
         >
-          <Container>
-            <Menu.Item
-              onClick={this.toggleSideMenu}
-              style={{
+          <Menu.Item
+            onClick={this.toggleSideMenu}
+            style={{
                 marginRight: 0
-              }}
-            >
-              <Icon name="sidebar" />
-            </Menu.Item>
-            <Menu.Item header
+            }}
+          >
+            <Icon name="sidebar" />
+          </Menu.Item>
+          <Menu.Item header
+            //onClick={sideMenu ? this.toggleSideMenu : null}
+            style={{
+              paddingLeft: 0,
+              marginLeft: 0
+            }}
+          >
+            <Link
+              to="/"
               style={{
-                  paddingLeft: 0,
-                  marginLeft: 0
+                fontSize:'1.3em'
               }}
+              onClick={ sideMenu ? this.toggleSideMenu : null }
             >
-              <Link to="/" style={{fontSize:'1.3em'}}>{config.siteTitle}</Link>
-            </Menu.Item>
-            <Menu.Item position="right">
-              <Button
-                as="a" style={{ marginLeft: '0.5em' }}
-              >
-                Escríbenos
-              </Button>
-            </Menu.Item>
-          </Container>
+              { this.props.currentPage=="" ? null : config.siteTitle }
+            </Link>
+          </Menu.Item>
+          <Menu.Item position="right">
+            <Button
+              style={{ marginLeft: '0.5em' }}
+            >
+              Escríbenos
+            </Button>
+          </Menu.Item>
         </Menu>
         <Sidebar
           as={Menu}

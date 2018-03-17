@@ -78,10 +78,10 @@ class Index extends React.Component {
         <Segment basic style={{ minHeight: `${this.state.height-136}px` }}>
           <Grid style={{ minHeight: `${this.state.height-136}px` }}>
             <Grid.Column verticalAlign='middle'>
-              <Responsive {...Responsive.onlyMobile}>
+              <Responsive maxWidth={767}>
                 <HomepageHeading mobile />
               </Responsive>
-              <Responsive {...Responsive.onlyComputer}>
+              <Responsive minWidth={767}>
                 <HomepageHeading />
               </Responsive>
             </Grid.Column>
@@ -100,16 +100,24 @@ class Index extends React.Component {
             <Grid.Row>
               <Grid.Column width={8}>
                 <Header as="h3" style={{ fontSize: "2em" }}>
-                  Clases particulares
+                  Lecciones
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
-                  Si tienes poco tiempo para aprender y tus horarios son flexibles, ésta es la mejor opción para ti, clases con o sin compañía.
+                  Diseñadas para individuos o grupos pequeños donde tú armas tu horario.
                 </p>
+                <Button
+                  style={{
+                    position: 'relative',
+                    right: 0
+                  }}
+                >
+                  Lecciones
+                </Button>
                 <Header as="h3" style={{ fontSize: "2em" }}>
                   Cursos
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
-                  Si te interesa también puedes optar por los cursos trimestrales de nivel básico, con un mínimo de 4 y un máximo de 6 personas.
+                  lalala
                 </p>
               </Grid.Column>
               <Grid.Column floated="right" width={6}>
@@ -121,13 +129,6 @@ class Index extends React.Component {
                 />
               </Grid.Column>
             </Grid.Row>
-            {/*
-              <Grid.Row>
-              <Grid.Column textAlign="center">
-                <Button size="huge">Check Them Out</Button>
-              </Grid.Column>
-              </Grid.Row>
-            */}
           </Grid>
         </Segment>
 
