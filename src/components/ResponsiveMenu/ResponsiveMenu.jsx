@@ -50,15 +50,6 @@ class DesktopNavbar extends Component {
     const { fixed } = this.state;
     return (
       <div>
-        <Visibility
-          once={false}
-          onBottomPassed={this.showFixedMenu}
-          onBottomPassedReverse={this.hideFixedMenu}
-          style={{
-            height: 200,
-            position: "absolute"
-          }}
-        >
           <Menu
             fixed="top"
             secondary={true}
@@ -95,8 +86,7 @@ class DesktopNavbar extends Component {
               </Menu.Item>
             </Container>
           </Menu>
-        </Visibility>
-      </div>
+        </div>
     );
   }
 }
@@ -138,51 +128,41 @@ class MobileNavbar extends Component {
     const { fixed, sideMenu } = this.state;
     return (
       <div>
-        <Visibility
-          once={false}
-          onBottomPassed={this.showFixedMenu}
-          onBottomPassedReverse={this.hideFixedMenu}
+        <Menu
+          fixed="top"
+          secondary={true}
+          size="small"
           style={{
-            height: 200,
-            position: "absolute"
-          }}
-        >
-          <Menu
-            fixed="top"
-            secondary={true}
-            size="small"
-            style={{
               backgroundColor: "rgba(255,255,255,.8)",
               //opacity: `${fixed ? 1 : 0}`
-            }}
-          >
-            <Container>
-              <Menu.Item
-                onClick={this.toggleSideMenu}
-                style={{
-                    marginRight: 0
-                }}
-              >
-                <Icon name="sidebar" />
-              </Menu.Item>
-              <Menu.Item header
-                style={{
+          }}
+        >
+          <Container>
+            <Menu.Item
+              onClick={this.toggleSideMenu}
+              style={{
+                marginRight: 0
+              }}
+            >
+              <Icon name="sidebar" />
+            </Menu.Item>
+            <Menu.Item header
+              style={{
                   paddingLeft: 0,
                   marginLeft: 0
-                }}
+              }}
+            >
+              <Link to="/" style={{fontSize:'1.3em'}}>{config.siteTitle}</Link>
+            </Menu.Item>
+            <Menu.Item position="right">
+              <Button
+                as="a" style={{ marginLeft: '0.5em' }}
               >
-                <Link to="/" style={{fontSize:'1.3em'}}>{config.siteTitle}</Link>
-              </Menu.Item>
-              <Menu.Item position="right">
-                <Button
-                  as="a" style={{ marginLeft: '0.5em' }}
-                >
-                  Escríbenos
-                </Button>
-              </Menu.Item>
-            </Container>
-          </Menu>
-        </Visibility>
+                Escríbenos
+              </Button>
+            </Menu.Item>
+          </Container>
+        </Menu>
         <Sidebar
           as={Menu}
           width='wide'
@@ -251,14 +231,22 @@ class MobileNavbar extends Component {
 MobileNavbar.propTypes = {
 };
 
-export default class TopBar extends React.Component {
+export default class ResponsiveMenu extends React.Component {
   render() {
     return (
       <div>
-        <Responsive {...Responsive.onlyComputer}>
+        {/*
+          <Responsive {...Responsive.onlyComputer}>
+        */}
+        <Responsive minWidth={767}>
           <DesktopNavbar currentPage={this.props.currentPage} />
         </Responsive>
-        <Responsive {...Responsive.onlyMobile}>
+        {/*
+          <Responsive {...Responsive.onlyTablet}>
+          <DesktopNavbar currentPage={this.props.currentPage} />
+          </Responsive>
+        */}
+        <Responsive maxWidth={767}>
           <MobileNavbar currentPage={this.props.currentPage} />
         </Responsive>
       </div>
@@ -266,5 +254,5 @@ export default class TopBar extends React.Component {
   }
 }
 
-TopBar.propTypes = {
+ResponsiveMenu.propTypes = {
 };
