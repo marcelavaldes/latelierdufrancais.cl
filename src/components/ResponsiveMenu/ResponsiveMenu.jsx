@@ -89,7 +89,7 @@ class MobileNavbar extends Component {
                 marginRight: 0
               }}
             >
-              <Icon name="sidebar" />
+              <Icon name={ sideMenu ? 'arrow left' : 'sidebar'} />
             </Menu.Item>
             <Menu.Item header
               style={{
