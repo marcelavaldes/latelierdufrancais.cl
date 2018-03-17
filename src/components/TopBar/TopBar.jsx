@@ -20,7 +20,7 @@ import {
 
 import config from "../../../data/SiteConfig";
 
-export default class TopBar extends Component {
+class DesktopNavbar extends Component {
   constructor() {
     super();
     this.state = { }
@@ -41,12 +41,99 @@ export default class TopBar extends Component {
     });
     console.log(this.state);
   }
+
+  componentDidMount() {
+    this.hideFixedMenu();
+  }
+
+  render() {
+    const { fixed } = this.state;
+    return (
+      <div>
+        <Visibility
+          once={false}
+          onBottomPassed={this.showFixedMenu}
+          onBottomPassedReverse={this.hideFixedMenu}
+          style={{
+            height: 200,
+            position: "absolute"
+          }}
+        >
+          <Menu
+            fixed="top"
+            secondary={true}
+            size="small"
+            style={{
+              backgroundColor: "rgba(255,255,255,.8)",
+              opacity: `${fixed ? 1 : 0}`
+            }}
+          >
+            <Container>
+              <Menu.Item header
+                style={{
+                  paddingLeft: 0,
+                  marginLeft: 0
+                }}
+              >
+                <Link to="/" style={{fontSize:'1.3em'}}>{config.siteTitle}</Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/clases">Clases</Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/cursos">Cursos</Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/colabora">Colabora</Link>
+              </Menu.Item>
+              <Menu.Item position="right">
+                <Button
+                  as="a" style={{ marginLeft: '0.5em' }}
+                >
+                  Escríbenos
+                </Button>
+              </Menu.Item>
+            </Container>
+          </Menu>
+        </Visibility>
+      </div>
+    );
+  }
+}
+
+DesktopNavbar.propTypes = {
+};
+
+class MobileNavbar extends Component {
+  constructor() {
+    super();
+    this.state = { }
+    this.hideFixedMenu = this.hideFixedMenu.bind(this)
+    this.showFixedMenu = this.showFixedMenu.bind(this)
+  }
+
+  hideFixedMenu = () => {
+    this.setState({
+      fixed: this.props.currentPage=="" ? false : true
+    });
+    console.log(this.state);
+  }
+
+  showFixedMenu = () => {
+    this.setState({
+      fixed: true
+    });
+    console.log(this.state);
+  }
+
   toggleSideMenu = () => {
     this.setState((prevState) => ({ sideMenu: !prevState.sideMenu }))
   }
+
   componentDidMount() {
-    //this.hideFixedMenu();
+    this.hideFixedMenu();
   }
+
   render() {
     const { fixed, sideMenu } = this.state;
     return (
@@ -66,24 +153,18 @@ export default class TopBar extends Component {
             size="small"
             style={{
               backgroundColor: "rgba(255,255,255,.8)",
-              //opacity: `${fixed ? 1 : 0}`
+              opacity: `${fixed ? 1 : 0}`
             }}
           >
             <Container>
-              <Responsive {...Responsive.onlyMobile}
+              <Menu.Item
+                onClick={this.toggleSideMenu}
                 style={{
-                  display: 'inherit'
+                    marginRight: 0
                 }}
               >
-                <Menu.Item
-                  onClick={this.toggleSideMenu}
-                  style={{
-                    marginRight: 0
-                  }}
-                >
-                  <Icon name="sidebar" />
-                </Menu.Item>
-              </Responsive>
+                <Icon name="sidebar" />
+              </Menu.Item>
               <Menu.Item header
                 style={{
                   paddingLeft: 0,
@@ -92,25 +173,9 @@ export default class TopBar extends Component {
               >
                 <Link to="/" style={{fontSize:'1.3em'}}>{config.siteTitle}</Link>
               </Menu.Item>
-              <Responsive {...Responsive.onlyComputer}
-                style={{
-                  display: 'inherit'
-                }}
-              >
-
-                <Menu.Item>
-                  <Link to="/clases">Clases</Link>
-                </Menu.Item>
-                <Menu.Item>
-                  <Link to="/cursos">Cursos</Link>
-                </Menu.Item>
-                <Menu.Item>
-                  <Link to="/colabora">Colabora</Link>
-                </Menu.Item>
-              </Responsive>
               <Menu.Item position="right">
                 <Button
-                  as="a" /*inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}*/
+                  as="a" style={{ marginLeft: '0.5em' }}
                 >
                   Escríbenos
                 </Button>
@@ -178,6 +243,24 @@ export default class TopBar extends Component {
             Colabora
           </Menu.Item>
         </Sidebar>
+      </div>
+    );
+  }
+}
+
+MobileNavbar.propTypes = {
+};
+
+export default class TopBar extends React.Component {
+  render() {
+    return (
+      <div>
+        <Responsive {...Responsive.onlyComputer}>
+          <DesktopNavbar currentPage={this.props.currentPage} />
+        </Responsive>
+        <Responsive {...Responsive.onlyMobile}>
+          <MobileNavbar currentPage={this.props.currentPage} />
+        </Responsive>
       </div>
     );
   }

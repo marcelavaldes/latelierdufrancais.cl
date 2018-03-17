@@ -103,15 +103,13 @@ class Index extends React.Component {
                   Clases particulares
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
-                  Clases particulares individuales o para grupos pequeños, donde programas las sesiones según tu disponibilidad.
-                  Si te gustaría aprender francés con un amigo, tu compañero o tu familia, y tienes poco tiempo, ésta puede ser tu mejor opción.
+                  Si tienes poco tiempo para aprender y tus horarios son flexibles, ésta es la mejor opción para ti, clases con o sin compañía.
                 </p>
                 <Header as="h3" style={{ fontSize: "2em" }}>
                   Cursos
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
-                  Yes that's right, you thought it was the stuff of dreams, but
-                  even bananas can be bioengineered.
+                  Si te interesa también puedes optar por los cursos trimestrales de nivel básico, con un mínimo de 4 y un máximo de 6 personas.
                 </p>
               </Grid.Column>
               <Grid.Column floated="right" width={6}>
