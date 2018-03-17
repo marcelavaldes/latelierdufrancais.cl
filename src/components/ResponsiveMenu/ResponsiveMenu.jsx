@@ -52,9 +52,9 @@ class DesktopNavbar extends Component {
           </Menu.Menu>
         </Container>
       </Menu>
-        );
-        }
-        }
+    );
+  }
+}
 
 DesktopNavbar.propTypes = {
 };
@@ -82,38 +82,39 @@ class MobileNavbar extends Component {
               //opacity: `${fixed ? 1 : 0}`
           }}
         >
-          <Menu.Item
-            onClick={this.toggleSideMenu}
-            style={{
-                marginRight: 0
-            }}
-          >
-            <Icon name="sidebar" />
-          </Menu.Item>
-          <Menu.Item header
-            //onClick={sideMenu ? this.toggleSideMenu : null}
-            style={{
-              paddingLeft: 0,
-              marginLeft: 0
-            }}
-          >
-            <Link
-              to="/"
+          <Container>
+            <Menu.Item
+              onClick={this.toggleSideMenu}
               style={{
-                fontSize:'1.3em'
+                marginRight: 0
               }}
-              onClick={ sideMenu ? this.toggleSideMenu : null }
             >
-              { this.props.currentPage=="" ? null : config.siteTitle }
-            </Link>
-          </Menu.Item>
-          <Menu.Item position="right">
-            <Button
-              style={{ marginLeft: '0.5em' }}
+              <Icon name="sidebar" />
+            </Menu.Item>
+            <Menu.Item header
+              style={{
+                paddingLeft: 0,
+                marginLeft: 0
+              }}
             >
-              Escríbenos
-            </Button>
-          </Menu.Item>
+              <Link
+                to="/"
+                onClick={ sideMenu ? this.toggleSideMenu : null }
+                style={{
+                  fontSize:'1.3em'
+                }}
+              >
+                { this.props.currentPage=="" ? null : config.siteTitle }
+              </Link>
+            </Menu.Item>
+            <Menu.Item position="right">
+              <Button
+                style={{ marginLeft: '0.5em' }}
+              >
+                Escríbenos
+              </Button>
+            </Menu.Item>
+          </Container>
         </Menu>
         <Sidebar
           as={Menu}
@@ -187,17 +188,9 @@ export default class ResponsiveMenu extends React.Component {
   render() {
     return (
       <div>
-        {/*
-          <Responsive {...Responsive.onlyComputer}>
-        */}
         <Responsive minWidth={767}>
           <DesktopNavbar currentPage={this.props.currentPage} />
         </Responsive>
-        {/*
-          <Responsive {...Responsive.onlyTablet}>
-          <DesktopNavbar currentPage={this.props.currentPage} />
-          </Responsive>
-        */}
         <Responsive maxWidth={767}>
           <MobileNavbar currentPage={this.props.currentPage} />
         </Responsive>
