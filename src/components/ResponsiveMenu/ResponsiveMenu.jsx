@@ -4,18 +4,11 @@ import PropTypes from "prop-types";
 import {
   Button,
   Container,
-  Divider,
-  Grid,
   Header,
   Icon,
-  Image,
-  List,
   Menu,
   Responsive,
-  Segment,
   Sidebar,
-  Visibility,
-  Input
 } from "semantic-ui-react";
 
 import config from "../../../data/SiteConfig";
@@ -25,15 +18,17 @@ class DesktopNavbar extends Component {
     return (
       <Menu
         fixed="top"
-        secondary={true}
+        secondary
         size="small"
         style={{
           backgroundColor: "rgba(255,255,255,.8)",
         }}
       >
         <Container>
-          <Menu.Item header>
-            <Link to="/" style={{fontSize:'1.3em'}}>{ this.props.currentPage=="" ? null : config.siteTitle }</Link>
+          <Menu.Item header style={{ fontSize:'1.3em', paddingLeft: 0, position: 'absolute' }}>
+            <Link to="/">
+              { this.props.currentPage=="" ? null : config.siteTitle }
+            </Link>
           </Menu.Item>
           <Menu.Menu  position="right">
             <Menu.Item>
@@ -75,7 +70,7 @@ class MobileNavbar extends Component {
       <div>
         <Menu
           fixed="top"
-          secondary={true}
+          secondary
           size="small"
           style={{
               backgroundColor: "rgba(255,255,255,.8)",
@@ -86,7 +81,8 @@ class MobileNavbar extends Component {
             <Menu.Item
               onClick={this.toggleSideMenu}
               style={{
-                marginRight: 0
+                marginRight: 0,
+                height: 41
               }}
             >
               <Icon name={ sideMenu ? 'arrow left' : 'sidebar'} />
@@ -107,13 +103,7 @@ class MobileNavbar extends Component {
                 { this.props.currentPage=="" ? null : config.siteTitle }
               </Link>
             </Menu.Item>
-            <Menu.Item position="right">
-              <Button
-                style={{ marginLeft: '0.5em' }}
-              >
-                Escríbenos
-              </Button>
-            </Menu.Item>
+
           </Container>
         </Menu>
         <Sidebar
@@ -184,7 +174,7 @@ class MobileNavbar extends Component {
 MobileNavbar.propTypes = {
 };
 
-export default class ResponsiveMenu extends React.Component {
+export default class ResponsiveMenu extends Component {
   render() {
     return (
       <div>

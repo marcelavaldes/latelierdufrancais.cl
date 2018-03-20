@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here|Text+Me+One&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Text+Me+One&subset=latin-ext');
 
 body {
   font-family: 'Text Me One', sans-serif;
@@ -10,10 +10,6 @@ body {
 
 .ui.menu {
   font-family: 'Text Me One', sans-serif;
-}
-
-.ui.menu .ui.header {
-  font-family: 'Just Me Again Down Here', cursive;
 }
 
 a {
