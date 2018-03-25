@@ -1,6 +1,8 @@
 const config = require("./data/SiteConfig");
 
-const pathPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
+const pathPrefix = config.pathPrefix === "/" ?
+  "" :
+  config.pathPrefix;
 
 module.exports = {
   pathPrefix: config.pathPrefix,
@@ -17,6 +19,13 @@ module.exports = {
     }
   },
   plugins: [
+    "gatsby-plugin-preact",
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: {
+        prefixes: [`/app/*`]
+      }
+    },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-filesystem",
@@ -59,8 +68,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
-    "gatsby-plugin-sitemap",
-    {
+    "gatsby-plugin-sitemap", {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: config.siteTitle,
@@ -94,40 +102,38 @@ module.exports = {
           ret.generator = "GatsbyJS Material Starter";
           return ret;
         },
-        query: `
-        {
+        query: `{
           site {
             siteMetadata {
               rssMetadata {
                 site_url
                 feed_url
-                title
-                description
-                image_url
-                author
-                copyright
+        				title
+        				description
+        				image_url
+        				author
+        				copyright
               }
             }
           }
-        }
-      `,
-        feeds: [
-          {
-            serialize(ctx) {
-              const rssMetadata = ctx.query.site.siteMetadata.rssMetadata;
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
-                categories: edge.node.frontmatter.tags,
-                date: edge.node.frontmatter.date,
-                title: edge.node.frontmatter.title,
-                description: edge.node.excerpt,
-                author: rssMetadata.author,
-                url: rssMetadata.site_url + edge.node.fields.slug,
-                guid: rssMetadata.site_url + edge.node.fields.slug,
-                custom_elements: [{ "content:encoded": edge.node.html }]
-              }));
-            },
-            query: `
-            {
+        }`,
+        feeds: [{
+          serialize(ctx) {
+            const rssMetadata = ctx.query.site.siteMetadata.rssMetadata;
+            return ctx.query.allMarkdownRemark.edges.map(edge => ({
+              categories: edge.node.frontmatter.tags,
+              date: edge.node.frontmatter.date,
+              title: edge.node.frontmatter.title,
+              description: edge.node.excerpt,
+              author: rssMetadata.author,
+              url: rssMetadata.site_url + edge.node.fields.slug,
+              guid: rssMetadata.site_url + edge.node.fields.slug,
+              custom_elements: [{
+                "content:encoded": edge.node.html
+              }]
+            }));
+          },
+          query: `{
               allMarkdownRemark(
                 limit: 1000,
                 sort: { order: DESC, fields: [frontmatter___date] },
@@ -148,11 +154,9 @@ module.exports = {
                   }
                 }
               }
-            }
-          `,
-            output: config.siteRss
-          }
-        ]
+            }`,
+          output: config.siteRss
+        }]
       }
     }
   ]
