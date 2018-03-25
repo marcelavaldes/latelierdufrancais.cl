@@ -19,7 +19,7 @@ module.exports = {
     }
   },
   plugins: [
-    "gatsby-plugin-preact",
+    //"gatsby-plugin-preact",
     {
       resolve: `gatsby-plugin-create-client-paths`,
       options: {
