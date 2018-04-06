@@ -67,7 +67,9 @@ export default class MainLayout extends Component {
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <ResponsiveMenu currentPage={this.getLocalTitle()} config={config}/>
+        {
+          //<ResponsiveMenu currentPage={this.getLocalTitle()} config={config}/>
+        }
         <Segment
           basic
           style={{
