@@ -1,5 +1,6 @@
 @import "../../layouts/palette.scss";
 
+/*
 :export {
   color1: $color1;
   color2: $color2;
@@ -7,14 +8,55 @@
   color4: $color4;
   color5: $color5;
 }
+*/
+
+.cielo {
+  fill: #9CCBED;
+}// color1
+
+.ext-contorno {
+  fill: #1D4176;
+}//color5
+
+.ext-color {
+  fill: #E1E6E7;
+}//color5
+
+.torre-contorno {
+  fill: #1D4176;
+}//color5
+
+.torre-color {
+  fill: #E1E6E7;
+}
+
+.pasto-contorno {
+  fill: #E1E6E7;
+}//color5
+
+.pasto-color {
+  fill:#33CCCC;
+}//color3
+
+.marco-int {
+  fill: #33CCCC;
+}//color3
+
+.marco-ext {
+
+}
+
+
+.marco-contorno {
+  fill:#1D4176;
+}//color5
+
+.muro {
+  //fill:
+}
 
 /*
-  .cielo        {fill:#9CCBED;} color1
   .marcoExt     {fill:#CC6929;} color2
-  .pastoColor   {fill:#33CCCC;} color3
-  .marcoInt     {fill:#33CCCC;} color3
-  .extColor     {fill:#E1E6E7;} color4
   .muroExt      {fill:#E1E6E7;} color4
-  .extContorno  {fill:#1D4176;} color5
-  .trazoVentana {fill:#1D4176;} color5
-*/
+
+  */
