@@ -10,8 +10,6 @@ import config from "../../data/SiteConfig";
 import "semantic-ui-css/semantic.min.css";
 import "./index.scss";
 
-import pattern from "./pattern1.svg";
-
 export default class MainLayout extends Component {
   getLocalTitle() {
     function capitalize(string) {
