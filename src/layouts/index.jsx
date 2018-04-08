@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import Helmet from "react-helmet";
 import PropTypes from "prop-types";
 import { Segment, Container, Header } from "semantic-ui-react"
-import ResponsiveMenu from "../components/ResponsiveMenu/ResponsiveMenu";
+//import ResponsiveMenu from "../components/ResponsiveMenu/ResponsiveMenu";
 import Footer from "../components/Footer/Footer";
 
 import config from "../../data/SiteConfig";
 
 import "semantic-ui-css/semantic.min.css";
-import "./index.css";
+import "./index.scss";
 
 import pattern from "./pattern1.svg";
 
@@ -53,10 +53,14 @@ export default class MainLayout extends Component {
   }
 
   render() {
+    const lala = this.state
     return (
-      <div
+      <Segment
+        basic
         style={{
-          background: `url(${pattern})`,
+          padding: 0,
+          margin: 0,
+          //background: `url(${pattern})`,
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat no-repeat",
@@ -70,25 +74,12 @@ export default class MainLayout extends Component {
         {
           //<ResponsiveMenu currentPage={this.getLocalTitle()} config={config}/>
         }
-        <Segment
-          basic
-          style={{
-            padding: "8em 0em 0em 0em",
-            margin: 0
-          }}
-        >
-          <Container>
-            <Header
-              as='h1'
-              content={this.getLocalTitle()}
-            />
-          </Container>
-        </Segment>
+
         {
-          this.props.children()
+          this.props.children({...this.props, lala})
         }
         <Footer config={config} />
-      </div>
+      </Segment>
     );
   }
 }
