@@ -90,10 +90,15 @@ const HomepageCover = ({ mobile, height }) => {
               :
               null
             }
-            <Image
-              size="massive"
-              src={logo}
-            />
+            {
+              /*
+              <Image
+                size="massive"
+                src={logo}
+              />
+              */
+              <Logo width="80" height="80" />
+            }
           </Grid.Column>
           <Grid.Column
             textAlign={ mobile ? "center" : "left" }
