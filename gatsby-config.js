@@ -65,6 +65,12 @@ module.exports = {
         color: config.themeColor
       }
     },
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        precision: 8,
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",

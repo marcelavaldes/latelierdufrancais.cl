@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Text+Me+One&subset=latin-ext');
+@import "./palette.scss";
+
+// Variables
+$font-stack: 'Text Me One', sans-serif;
+$primary-color: $color1;
+$background-color: $color2;
+$link-color: $color3;
+
+body {
+  font-family: $font-stack;
+  color: $primary-color;
+  background-color: $background-color;
+}
+
+.ui.header {
+  font-family: $font-stack;
+  color: $primary-color;
+}
+
+.ui.menu {
+  font-family: $font-stack;
+  color: $primary-color;
+}
+
+a {
+  color: $link-color
+}
