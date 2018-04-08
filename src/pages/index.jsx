@@ -19,35 +19,6 @@ import config from "../../data/SiteConfig";
 import logo from "../components/Logo/logo.svg";
 import Logo from '../components/Logo/Logo';
 
-const HomepageHeading = ({ mobile }) => (
-  <Container text textAlign="center">
-    {
-      //  <Image src={logo} />
-      <Logo width="80" height="80" />
-    }
-    <Header
-      //as={mobile ? "h1" : "h1"}
-      content={config.siteTitle}
-      style={{
-        fontSize: mobile ? "2em" : "4em",
-        fontWeight: mobile ? false : false,
-      }}
-    />
-    <Header
-      as="h2"
-      content="Aprende a tu ritmo con clases personalizadas de francés en Talca y San Clemente."
-      style={{
-        fontSize: mobile ? "1.5em" : "1.7em",
-        fontWeight: "normal",
-      }}
-    />
-    <Button>
-      Leer más...
-      <Icon name="right arrow" />
-    </Button>
-  </Container>
-);
-
 const HomepageCover = ({ mobile, height }) => {
   return (
     <Segment
@@ -131,8 +102,9 @@ const HomepageCover = ({ mobile, height }) => {
             }
             <p style={{ fontSize: "1.6em" }}>
               Instead of focusing on content creation and hard work, we have
-              learned how to master the art of doing nothing by providing.
+              learned how to master the art of doing nothing by providing. <Link to="/clases">Clases particulares</Link>
             </p>
+
             <Button
               style={{
                 //position: 'relative',
@@ -183,19 +155,20 @@ class Index extends React.Component {
           <HomepageCover height={this.state.height} />
         </Responsive>
 
-
-        <Segment basic style={{ minHeight: `${this.state.height}px` }}>
-          <Grid style={{ minHeight: `${this.state.height}px` }}>
-            <Grid.Column verticalAlign='middle'>
-              <Responsive maxWidth={767}>
-                <HomepageHeading mobile />
-              </Responsive>
-              <Responsive minWidth={767}>
-                <HomepageHeading />
-              </Responsive>
-            </Grid.Column>
-          </Grid>
-        </Segment>
+        {/*
+          <Segment basic style={{ minHeight: `${this.state.height}px` }}>
+            <Grid style={{ minHeight: `${this.state.height}px` }}>
+          <Grid.Column verticalAlign='middle'>
+          <Responsive maxWidth={767}>
+          <HomepageHeading mobile />
+          </Responsive>
+          <Responsive minWidth={767}>
+          <HomepageHeading />
+          </Responsive>
+          </Grid.Column>
+            </Grid>
+          </Segment>
+        */}
 
         <Segment
           style={{

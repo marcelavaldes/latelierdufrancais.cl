@@ -3,26 +3,26 @@
 
 // Variables
 $font-stack: 'Text Me One', sans-serif;
-$primary-color: $color1;
-$background-color: $color2;
-$link-color: $color3;
+//$primary-color: $color1;
+//$background-color: $color2;
+//$link-color: $color3;
 
 body {
   font-family: $font-stack;
-  color: $primary-color;
-  background-color: $background-color;
+  color: $color1;
+  background-color: $color2;
 }
 
 .ui.header {
   font-family: $font-stack;
-  color: $primary-color;
+  color: $color3;
 }
 
 .ui.menu {
   font-family: $font-stack;
-  color: $primary-color;
+  color: $color3;
 }
 
 a {
-  color: $link-color;
+  color: $color4;
 }
