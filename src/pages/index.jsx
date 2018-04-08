@@ -16,17 +16,21 @@ import {
 import Link from "gatsby-link";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
+import logo from "../components/Logo/logo.svg";
+import Logo from '../components/Logo/Logo';
 
 const HomepageHeading = ({ mobile }) => (
   <Container text textAlign="center">
+    {
+      //  <Image src={logo} />
+      <Logo width="80" height="80" />
+    }
     <Header
-      as={mobile ? "h3" : "h1"}
+      //as={mobile ? "h1" : "h1"}
       content={config.siteTitle}
       style={{
         fontSize: mobile ? "2em" : "4em",
-        fontWeight: mobile ? false : "normal",
-        marginTop: mobile ? "0em" : "0em",
-        marginBottom: mobile ? "0em" : ".4em"
+        fontWeight: mobile ? false : false,
       }}
     />
     <Header
@@ -35,20 +39,109 @@ const HomepageHeading = ({ mobile }) => (
       style={{
         fontSize: mobile ? "1.5em" : "1.7em",
         fontWeight: "normal",
-        //marginTop: mobile ? "0.5em" : "1.5em",
-        marginBottom: mobile ? "1em" : "1.5em"
       }}
     />
-    <Button
-      style={{
-        marginBottom: mobile ? "8em" : "3em"
-      }}
-    >
+    <Button>
       Leer más...
       <Icon name="right arrow" />
     </Button>
   </Container>
 );
+
+const HomepageCover = ({ mobile, height }) => {
+  return (
+    <Segment
+      basic
+      style={{
+        padding: mobile ? "2vh 1vw" : "1vh 2vw",
+        //backgroundColor: "rgba(51,204,204,1)",
+        minHeight: `${height}px`
+      }}
+      vertical
+    >
+      <Grid stackable verticalAlign="middle" style={{ minHeight: `${height}px` }}>
+        <Grid.Row columns="equal">
+          <Grid.Column
+            textAlign="center"
+          >
+            {
+              mobile ?
+                <Header
+                  as="h1"
+                  style={{
+                    fontSize: mobile ? "10vw" : "10vw",
+                  }}
+                >
+                  {
+                      //config.siteTitle
+                  }
+                  L'atelier
+                  <span
+                    style={{
+                      fontSize: mobile ? "10vw" : null,
+                        lineHeight: "10vh",
+                      display: mobile ? null : "block"
+                    }}
+                  >
+                    du
+                  </span>
+                  Français
+                </Header>
+              :
+              null
+            }
+            <Image
+              size="massive"
+              src={logo}
+            />
+          </Grid.Column>
+          <Grid.Column
+            textAlign={ mobile ? "center" : "left" }
+          >
+            {
+              mobile ?
+                null
+              :
+              <Header
+                as="h1"
+                style={{
+                  fontSize: mobile ? "10vw" : "10vw",
+                }}
+              >
+                {
+                  //config.siteTitle
+                }
+                L'atelier
+                <span
+                  style={{
+                    fontSize: mobile ? "10vw" : null,
+                    lineHeight: "10vh",
+                    display: mobile ? null : "block"
+                  }}
+                >
+                  du
+                </span>
+                Français
+              </Header>
+            }
+            <p style={{ fontSize: "1.6em" }}>
+              Instead of focusing on content creation and hard work, we have
+              learned how to master the art of doing nothing by providing.
+            </p>
+            <Button
+              style={{
+                //position: 'relative',
+                //right: 0
+              }}
+            >
+              Lecciones
+            </Button>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
+  );
+}
 
 class Index extends React.Component {
   constructor() {
@@ -69,14 +162,25 @@ class Index extends React.Component {
   }
   render() {
     return (
-      <div
-        style={this.props.transition && this.props.transition.style}
-        className="index-container"
+      <Segment
+        basic
+        style={{
+          padding: 0
+        }}
       >
         <Helmet title={config.siteTitle} />
 
-        <Segment basic style={{ minHeight: `${this.state.height-136}px` }}>
-          <Grid style={{ minHeight: `${this.state.height-136}px` }}>
+
+        <Responsive maxWidth={767}>
+          <HomepageCover mobile height={this.state.height} />
+        </Responsive>
+        <Responsive minWidth={767}>
+          <HomepageCover height={this.state.height} />
+        </Responsive>
+
+
+        <Segment basic style={{ minHeight: `${this.state.height}px` }}>
+          <Grid style={{ minHeight: `${this.state.height}px` }}>
             <Grid.Column verticalAlign='middle'>
               <Responsive maxWidth={767}>
                 <HomepageHeading mobile />
@@ -120,12 +224,13 @@ class Index extends React.Component {
                   lalala
                 </p>
               </Grid.Column>
-              <Grid.Column floated="right" width={6}>
+              <Grid.Column width={8}>
                 <Image
-                  bordered
+                  //bordered
                   rounded
-                  size="large"
-                  src="//via.placeholder.com/350x150"
+                  size="huge"
+                  //src="//via.placeholder.com/350x150"
+                  src={logo}
                 />
               </Grid.Column>
             </Grid.Row>
@@ -155,6 +260,9 @@ class Index extends React.Component {
             </Grid.Row>
           </Grid>
         </Segment>
+
+
+
 
         <Segment style={{ padding: "8em 0em" }} vertical>
           <Container text>
@@ -194,7 +302,7 @@ class Index extends React.Component {
             </Button>
           </Container>
         </Segment>
-      </div>
+      </Segment>
     );
   }
 }
