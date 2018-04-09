@@ -203,13 +203,17 @@ class Index extends React.Component {
                 </p>
               </Grid.Column>
               <Grid.Column width={8}>
-                <Image
-                  //bordered
-                  rounded
-                  size="huge"
-                  //src="//via.placeholder.com/350x150"
-                  src={logo}
-                />
+                {/*
+                  <Image
+                    //bordered
+                    rounded
+                    size="huge"
+                    //src="//via.placeholder.com/350x150"
+                    src={logo}
+                  />
+                */}
+                <Logo width="80" height="80" />
+
               </Grid.Column>
             </Grid.Row>
           </Grid>
