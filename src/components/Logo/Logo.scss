@@ -1,5 +1,5 @@
 @import "../../layouts/palette.scss";
-
+@import "./nubes.sass";
 /*
 :export {
   color1: $color1;
@@ -10,49 +10,32 @@
 }
 */
 
-.cielo {
-  fill: #9CCBED;
-}// color1
-
-.ext-contorno {
-  fill: #1D4176;
-}//color5
-
-.ext-color {
-  fill: #E1E6E7;
-}//color5
-
-.torre-contorno {
-  fill: #1D4176;
-}//color5
-
-.torre-color {
-  fill: #E1E6E7;
+.nubes-contorno, .torre-contorno, .pasto-contorno, .marco-contorno {
+  fill: $color4;
 }
-
-.pasto-contorno {
-  fill: #E1E6E7;
-}//color5
-
+.nubes-color, .torre-color {
+  fill: $color5;
+}
 .pasto-color {
-  fill:#33CCCC;
-}//color3
-
-.marco-int {
-  fill: #33CCCC;
-}//color3
-
-.marco-ext {
-
+  fill: $color2;
+}
+.cielo {
+  fill: $color1;
 }
 
-
+// VENTANA
+.marco-int {
+  fill: $color3;
+}
+.marco-ext {
+  fill: $color5;
+}
 .marco-contorno {
-  fill:#1D4176;
-}//color5
-
+  //fill: $color4;
+  //fill: rgba(0,0,0,0);
+}
 .muro {
-  //fill:
+  fill: $color5;
 }
 
 /*
