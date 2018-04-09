@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Link from "gatsby-link";
 import UserLinks from "../UserLinks/UserLinks";
 import "./Footer.css";
-import flores from "./flores2.svg"
 import { Segment, Container, Grid, Header, List, Image } from 'semantic-ui-react'
 import Escribenos from "../Escribenos/Escribenos"
 
@@ -45,17 +44,6 @@ class Footer extends Component {
             </Grid.Row>
           </Grid>
         </Container>
-        <Image
-          src={flores}
-          style={{
-            position: 'absolute',
-            minWidth: '800px',
-            bottom: 0,
-            right: 0,
-            zIndex: -1000,
-            //opacity: .4
-          }}
-        />
       </Segment>
     );
   }
