@@ -166,6 +166,7 @@ class Index extends React.Component {
           */}
           {/* OpenGraph tags */}
           <meta property="og:url" content={config.siteUrl} />
+          <meta property="og:type" content="website" />
           <meta property="og:title" content={config.siteTitle} />
           <meta property="og:description" content={config.siteDescription} />
           <meta property="og:image" content={config.siteUrl + config.siteLogo} />
