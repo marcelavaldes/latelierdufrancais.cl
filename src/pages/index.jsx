@@ -14,7 +14,6 @@ import {
   Responsive
 } from "semantic-ui-react";
 import Link from "gatsby-link";
-import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import logo from "../components/Logo/logo.svg";
 import Logo from '../components/Logo/Logo';
@@ -154,8 +153,39 @@ class Index extends React.Component {
           padding: 0
         }}
       >
-        <Helmet title={config.siteTitle} />
+        <Helmet title={config.siteTitle}>
+          {/* General tags */}
+          <meta name="description" content={config.siteDescription} />
+          <meta name="image" content={config.siteLogo} />
 
+          {/* Schema.org tags */}
+          {/*
+            <script type="application/ld+json">
+              {JSON.stringify(schemaOrgJSONLD)}
+            </script>
+          */}
+          {/* OpenGraph tags */}
+          <meta property="og:url" content={config.siteUrl} />
+          <meta property="og:title" content={config.siteTitle} />
+          <meta property="og:description" content={config.siteDescription} />
+          <meta property="og:image" content={config.siteLogo} />
+          <meta
+            property="fb:app_id"
+            content={config.siteFBAppID ? config.siteFBAppID : ""}
+          />
+
+          {/* Twitter Card tags */}
+          {/*
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta
+              name="twitter:creator"
+              content={config.userTwitter ? config.userTwitter : ""}
+            />
+            <meta name="twitter:title" content={title} />
+            <meta name="twitter:description" content={description} />
+            <meta name="twitter:image" content={image} />
+          */}
+        </Helmet>
 
         <Responsive maxWidth={767}>
           <HomepageCover mobile height={this.state.height} />
