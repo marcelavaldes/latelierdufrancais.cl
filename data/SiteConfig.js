@@ -5,7 +5,7 @@ module.exports = {
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://www.latelierdufrancais.cl", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription: "A GatsbyJS stater with Advanced design in mind.", // Website description used for RSS feeds/meta description tag.
+  siteDescription: "Somos una comunidad en torno a la lengua y cultura francesa. Estamos en Talca y San Clemente.", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "148214869193038", // FB Application ID for using app insights
   googleAnalyticsID: "UA-78034545-3", // GA tracking ID.
