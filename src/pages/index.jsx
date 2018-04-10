@@ -81,7 +81,7 @@ const HomepageCover = ({ mobile, height }) => {
               <Header
                 as="h1"
                 style={{
-                  fontSize: mobile ? "10vw" : "10vw",
+                  fontSize: mobile ? "10vw" : "8vw",
                 }}
               >
                 {
@@ -100,12 +100,21 @@ const HomepageCover = ({ mobile, height }) => {
                 Français
               </Header>
             }
-            <p style={{ fontSize: "1.6em" }}>
-              Instead of focusing on content creation and hard work, we have
-              learned how to master the art of doing nothing by providing. <Link to="/clases">Clases particulares</Link>
+            <p style={{ fontSize: "2.4em" }}>
+              Somos una comunidad en torno a la lengua y cultura francesa.
+              Estamos en Talca y San Clemente. <Link to="/clases">Escríbenos.</Link>
             </p>
-
+            <Header as="h3" style={{ fontSize: "2em" }}>
+              Did We Tell You About Our Bananas?
+            </Header>
+            <p style={{ fontSize: "1.33em" }}>
+              Yes I know you probably disregarded the earlier boasts as
+              non-sequitur filler content, but it's really true. It took years
+              of gene splicing and combinatory DNA research, but our bananas can
+              really dance.
+            </p>
             <Button
+              className="join"
               style={{
                 //position: 'relative',
                 //right: 0

@@ -9,20 +9,19 @@ $font-stack: 'Text Me One', sans-serif;
 
 body {
   font-family: $font-stack;
-  color: $color4;
+  color: $color5;
   background-color: $color2;
 }
 
-.ui.header {
+.ui.header, .ui.menu {
   font-family: $font-stack;
-  color: $color4;
-}
-
-.ui.menu {
-  font-family: $font-stack;
-  color: $color4;
+  color: $color5;
 }
 
 a {
-  color: $color1;
+  color: $color3;
+}
+
+.join {
+  background-color: $color3;
 }

@@ -10,36 +10,18 @@
 }
 */
 
-.nubes-contorno, .torre-contorno, .pasto-contorno, .marco-contorno {
-  fill: $color4;
+.nubes-contorno, .torre-contorno, .pasto-color, .marco-contorno {
+  fill: $color2;
 }
-.nubes-color, .torre-color {
+.nubes-color, .torre-color, .muro {
   fill: $color5;
 }
-.pasto-color {
-  fill: $color2;
+.marco-ext {
+  fill: $color4;
+}
+.pasto-contorno, .marco-int {
+  fill: $color3;
 }
 .cielo {
   fill: $color1;
 }
-
-// VENTANA
-.marco-int {
-  fill: $color3;
-}
-.marco-ext {
-  fill: $color5;
-}
-.marco-contorno {
-  //fill: $color4;
-  //fill: rgba(0,0,0,0);
-}
-.muro {
-  fill: $color5;
-}
-
-/*
-  .marcoExt     {fill:#CC6929;} color2
-  .muroExt      {fill:#E1E6E7;} color4
-
-  */
