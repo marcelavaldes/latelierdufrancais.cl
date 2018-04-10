@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
-import UserLinks from "../UserLinks/UserLinks";
 import "./Footer.css";
 import { Segment, Container, Grid, Header, List, Image } from 'semantic-ui-react'
 import Escribenos from "../Escribenos/Escribenos"
