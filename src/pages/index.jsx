@@ -156,7 +156,7 @@ class Index extends React.Component {
         <Helmet title={config.siteTitle}>
           {/* General tags */}
           <meta name="description" content={config.siteDescription} />
-          <meta name="image" content={config.siteLogo} />
+          <meta name="image" content={config.siteUrl + config.siteLogo} />
 
           {/* Schema.org tags */}
           {/*
@@ -168,7 +168,7 @@ class Index extends React.Component {
           <meta property="og:url" content={config.siteUrl} />
           <meta property="og:title" content={config.siteTitle} />
           <meta property="og:description" content={config.siteDescription} />
-          <meta property="og:image" content={config.siteLogo} />
+          <meta property="og:image" content={config.siteUrl + config.siteLogo} />
           <meta
             property="fb:app_id"
             content={config.siteFBAppID ? config.siteFBAppID : ""}
