@@ -16,7 +16,6 @@ import {
 import Link from "gatsby-link";
 import config from "../../data/SiteConfig";
 import logo from "../components/Logo/logo.svg";
-import imagen from "./IMG_2838.jpg";
 import Logo from '../components/Logo/Logo';
 
 const HomepageCover = ({ mobile, height }) => {
