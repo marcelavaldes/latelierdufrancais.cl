@@ -10,18 +10,16 @@
 }
 */
 
-.nubes-contorno, .torre-contorno, .pasto-color, .marco-contorno {
-  fill: $color2;
-}
+
 .nubes-color, .torre-color, .muro {
   fill: $color5;
 }
-.marco-ext {
+.marco-ext, .pasto-contorno {
   fill: $color4;
 }
 .cielo, .marco-int {
   fill: $color3;
 }
-.pasto-contorno {
-  fill: $color4;
+.nubes-contorno, .torre-contorno, .pasto-color, .marco-contorno {
+  fill: $color2;
 }

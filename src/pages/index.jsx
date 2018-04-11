@@ -16,6 +16,7 @@ import {
 import Link from "gatsby-link";
 import config from "../../data/SiteConfig";
 import logo from "../components/Logo/logo.svg";
+import imagen from "./IMG_2838.jpg";
 import Logo from '../components/Logo/Logo';
 
 const HomepageCover = ({ mobile, height }) => {
@@ -24,93 +25,55 @@ const HomepageCover = ({ mobile, height }) => {
       basic
       style={{
         padding: mobile ? "2vh 1vw" : "1vh 2vw",
-        //backgroundColor: "rgba(51,204,204,1)",
         minHeight: `${height}px`
       }}
       vertical
     >
-      <Grid stackable verticalAlign="middle" style={{ minHeight: `${height}px` }}>
-        <Grid.Row columns="equal">
+      <Grid
+        stackable
+        verticalAlign="middle"
+        style={{
+          minHeight: `${height}px`
+        }}
+      >
+        <Grid.Row
+          columns="equal"
+        >
           <Grid.Column
             textAlign="center"
           >
-            {
-              mobile ?
-                <Header
-                  as="h1"
-                  style={{
-                    fontSize: mobile ? "10vw" : "10vw",
-                  }}
-                >
-                  {
-                      //config.siteTitle
-                  }
-                  L'atelier
-                  <span
-                    style={{
-                      fontSize: mobile ? "10vw" : null,
-                        lineHeight: "10vh",
-                      display: mobile ? null : "block"
-                    }}
-                  >
-                    du
-                  </span>
-                  Français
-                </Header>
-              :
-              null
-            }
-            {
-              /*
-              <Image
-                size="massive"
-                src={logo}
-              />
-              */
-              <Logo width="80" height="80" />
-            }
+            <Logo width="80" height="80" />
           </Grid.Column>
           <Grid.Column
             textAlign={ mobile ? "center" : "left" }
           >
-            {
-              mobile ?
-                null
-              :
-              <Header
-                as="h1"
+            <Header
+              as="h1"
+              style={{
+                fontSize: mobile ? "24vw" : "8vw",
+              }}
+            >
+              {
+                  //config.siteTitle
+              }
+              L'atelier
+              <span
                 style={{
-                  fontSize: mobile ? "10vw" : "8vw",
+                  //fontSize: mobile ? "20vw" : null,
+                  lineHeight: mobile ? "8vh" : "10vh",
+                  display:"block"
                 }}
               >
-                {
-                  //config.siteTitle
-                }
-                L'atelier
-                <span
-                  style={{
-                    fontSize: mobile ? "10vw" : null,
-                    lineHeight: "10vh",
-                    display: mobile ? null : "block"
-                  }}
-                >
-                  du
-                </span>
-                Français
-              </Header>
-            }
-            <p style={{ fontSize: "2.4em" }}>
-              Somos una comunidad en torno a la lengua y cultura francesa.
-              Estamos en Talca y San Clemente. <Link to="/clases">Escríbenos.</Link>
-            </p>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              Did We Tell You About Our Bananas?
+                du
+              </span>
+              Français
             </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              Yes I know you probably disregarded the earlier boasts as
-              non-sequitur filler content, but it's really true. It took years
-              of gene splicing and combinatory DNA research, but our bananas can
-              really dance.
+            <p style={{ fontSize: "2em" }}>
+              Somos una comunidad en torno a la lengua y cultura francesa.
+              <br />
+              Realizamos nuestros talleres y actividades en Talca y San Clemente.
+              <br />
+              <Link to="/clases">Escríbenos.</Link>
             </p>
             <Button
               className="join"
@@ -209,55 +172,6 @@ class Index extends React.Component {
             </Grid>
           </Segment>
         */}
-
-        <Segment
-          style={{
-            padding: "8em 0em",
-            backgroundColor: "rgba(255,255,255,.8)"
-          }}
-          vertical
-          //raised
-        >
-          <Grid container stackable verticalAlign="middle">
-            <Grid.Row>
-              <Grid.Column width={8}>
-                <Header as="h3" style={{ fontSize: "2em" }}>
-                  Lecciones
-                </Header>
-                <p style={{ fontSize: "1.33em" }}>
-                  Diseñadas para individuos o grupos pequeños donde tú armas tu horario.
-                </p>
-                <Button
-                  style={{
-                    position: 'relative',
-                    right: 0
-                  }}
-                >
-                  Lecciones
-                </Button>
-                <Header as="h3" style={{ fontSize: "2em" }}>
-                  Cursos
-                </Header>
-                <p style={{ fontSize: "1.33em" }}>
-                  lalala
-                </p>
-              </Grid.Column>
-              <Grid.Column width={8}>
-                {/*
-                  <Image
-                    //bordered
-                    rounded
-                    size="huge"
-                    //src="//via.placeholder.com/350x150"
-                    src={logo}
-                  />
-                */}
-                <Logo width="80" height="80" />
-
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment>
 
         <Segment style={{ padding: "0em" }} vertical>
           <Grid celled="internally" columns="equal" stackable>
