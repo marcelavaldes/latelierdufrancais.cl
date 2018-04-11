@@ -170,9 +170,9 @@ class Index extends React.Component {
           <meta property="og:title" content={config.siteTitle} />
           <meta property="og:description" content={config.siteDescription} />
           <meta property="og:image" content={config.siteUrl + config.siteLogo} />
-          <meta
-            property="fb:app_id"
-            content={config.siteFBAppID ? config.siteFBAppID : ""}
+          <meta property="og:image:width" content={1024} />
+          <meta property="og:image:height" content={1024} />
+          <meta property="fb:app_id" content={config.siteFBAppID}
           />
 
           {/* Twitter Card tags */}
