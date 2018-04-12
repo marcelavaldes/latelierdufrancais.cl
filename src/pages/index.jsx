@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Helmet from "react-helmet";
 import {
   Segment,
@@ -15,98 +15,45 @@ import {
 } from "semantic-ui-react";
 import Link from "gatsby-link";
 import config from "../../data/SiteConfig";
-import logo from "../components/Logo/logo.svg";
 import Logo from '../components/Logo/Logo';
 
-const HomepageCover = ({ mobile, height }) => {
+const HomeCover = ({ mobile }) => {
   return (
-    <Segment
-      basic
-      style={{
-        padding: mobile ? "2vh 1vw" : "1vh 2vw",
-        minHeight: `${height}px`
-      }}
-      vertical
-    >
-      <Grid
-        stackable
-        verticalAlign="middle"
-        style={{
-          minHeight: `${height}px`
-        }}
-      >
-        <Grid.Row
-          columns="equal"
-        >
-          <Grid.Column
-            textAlign="center"
+    <Grid stackable columns="equal" style={{ minHeight:"100vh" }}>
+      <Grid.Row verticalAlign="middle">
+        <Grid.Column textAlign="center">
+          <Logo width="80" height="80" />
+        </Grid.Column>
+        <Grid.Column textAlign="left">
+          <Header
+            as="h3"
+            style={{
+              fontSize: mobile ? "8vw" : "8vw"
+            }}
           >
-            <Logo width="80" height="80" />
-          </Grid.Column>
-          <Grid.Column
-            textAlign={ mobile ? "center" : "left" }
-          >
-            <Header
-              as="h1"
-              style={{
-                fontSize: mobile ? "24vw" : "8vw",
-              }}
-            >
-              {
-                  //config.siteTitle
-              }
-              L'atelier
-              <span
-                style={{
-                  //fontSize: mobile ? "20vw" : null,
-                  lineHeight: mobile ? "8vh" : "10vh",
-                  display:"block"
-                }}
-              >
-                du
-              </span>
-              Français
-            </Header>
-            <p style={{ fontSize: "2em" }}>
-              Somos una comunidad en torno a la lengua y cultura francesa.
-              <br />
-              Realizamos nuestros talleres y actividades en Talca y San Clemente.
-              <br />
-              <Link to="/clases">Escríbenos.</Link>
-            </p>
-            <Button
-              className="join"
-              style={{
-                //position: 'relative',
-                //right: 0
-              }}
-            >
-              Lecciones
-            </Button>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
+            L'atelier <span style={{ lineHeight: "0.5em", display:"block" }}>du</span> Français
+          </Header>
+          <p style={{ fontSize: "2em" }}>
+            Somos una comunidad en torno a la lengua y cultura francesa.
+            <br />
+            Realizamos nuestros talleres y actividades en Talca y San Clemente.
+            <br />
+            <Link to="/clases">Escríbenos.</Link>
+          </p>
+          <Button as="a" size="large">
+            Read More
+          </Button>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
   );
 }
 
-class Index extends React.Component {
-  constructor() {
-    super();
-    this.setHeight = this.setHeight.bind(this);
-    this.state = { height: 800 };
-  }
-  setHeight() {
-    const height = window.innerHeight;
-    this.setState({ height: height });
-  }
-  componentDidMount() {
-    this.setHeight();
-    window.addEventListener("resize", this.setHeight, false);
-  }
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.setHeight, false);
-  }
+const MobileCover = (props) => {
+  return (<div>MyComponent</div>);
+}
+
+class Index extends Component {
   render() {
     return (
       <Segment
@@ -150,27 +97,14 @@ class Index extends React.Component {
           */}
         </Helmet>
 
-        <Responsive maxWidth={767}>
-          <HomepageCover mobile height={this.state.height} />
-        </Responsive>
-        <Responsive minWidth={767}>
-          <HomepageCover height={this.state.height} />
-        </Responsive>
-
-        {/*
-          <Segment basic style={{ minHeight: `${this.state.height}px` }}>
-            <Grid style={{ minHeight: `${this.state.height}px` }}>
-          <Grid.Column verticalAlign='middle'>
-          <Responsive maxWidth={767}>
-          <HomepageHeading mobile />
+        <Segment basic style={{ minHeight: "100vh" }}>
+          <Responsive maxWidth={767} style={{ minHeight: "100vh" }}>
+            <HomeCover mobile />
           </Responsive>
-          <Responsive minWidth={767}>
-          <HomepageHeading />
+          <Responsive minWidth={767} style={{ minHeight: "100vh" }}>
+            <HomeCover />
           </Responsive>
-          </Grid.Column>
-            </Grid>
-          </Segment>
-        */}
+        </Segment>
 
         <Segment style={{ padding: "0em" }} vertical>
           <Grid celled="internally" columns="equal" stackable>
