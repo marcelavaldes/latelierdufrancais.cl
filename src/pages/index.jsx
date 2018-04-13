@@ -28,7 +28,7 @@ const HomeCover = ({ mobile }) => {
           <Header
             as="h3"
             style={{
-              fontSize: mobile ? "16vw" : "8vw"
+              fontSize: mobile ? "22vw" : "8vw",
             }}
           >
             L'atelier <span style={{ lineHeight: "0.5em", display:"block" }}>du</span> Français
@@ -40,7 +40,7 @@ const HomeCover = ({ mobile }) => {
             <br />
             <Link to="/clases">Escríbenos.</Link>
           </p>
-          <Button as="a" size="large">
+          <Button className="escribenos" as="a" size="large" color="red">
             Read More
           </Button>
         </Grid.Column>
