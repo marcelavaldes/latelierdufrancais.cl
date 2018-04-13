@@ -38,10 +38,9 @@ const HomeCover = ({ mobile }) => {
             <br />
             Realizamos nuestros talleres y actividades en Talca y San Clemente.
             <br />
-            <Link to="/clases">Escríbenos.</Link>
           </p>
-          <Button className="escribenos" as="a" size="large" color="red">
-            Read More
+          <Button as="a" size="large" color="red">
+            Escríbenos
           </Button>
         </Grid.Column>
       </Grid.Row>
