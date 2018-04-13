@@ -41,7 +41,7 @@ const HomeCover = ({ mobile }) => {
           </p>
           <Button as="a" size="large" color="red">
             Escríbenos
-            
+
           </Button>
         </Grid.Column>
       </Grid.Row>
@@ -98,11 +98,11 @@ class Index extends Component {
         </Helmet>
 
         <Segment basic style={{ minHeight: "100vh" }}>
-          <Responsive maxWidth={767} style={{ minHeight: "100vh" }}>
-            <HomeCover mobile />
-          </Responsive>
           <Responsive minWidth={767} style={{ minHeight: "100vh" }}>
             <HomeCover />
+          </Responsive>
+          <Responsive maxWidth={767} style={{ minHeight: "100vh" }}>
+            <HomeCover mobile />
           </Responsive>
         </Segment>
 
