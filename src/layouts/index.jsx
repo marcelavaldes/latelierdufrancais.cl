@@ -7,7 +7,7 @@ import Footer from "../components/Footer/Footer";
 
 import config from "../../data/SiteConfig";
 
-import "semantic-ui-css/semantic.min.css";
+import '../semantic/dist/semantic.min.css';
 import "./index.scss";
 
 export default class MainLayout extends Component {
