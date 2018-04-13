@@ -41,6 +41,7 @@ const HomeCover = ({ mobile }) => {
           </p>
           <Button as="a" size="large" color="red">
             Escríbenos
+            
           </Button>
         </Grid.Column>
       </Grid.Row>
