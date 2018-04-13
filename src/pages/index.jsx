@@ -24,11 +24,11 @@ const HomeCover = ({ mobile }) => {
         <Grid.Column textAlign="center">
           <Logo width="80" height="80" />
         </Grid.Column>
-        <Grid.Column textAlign="left">
+        <Grid.Column textAlign={ mobile ? "center" : "left" }>
           <Header
             as="h3"
             style={{
-              fontSize: mobile ? "8vw" : "8vw"
+              fontSize: mobile ? "16vw" : "8vw"
             }}
           >
             L'atelier <span style={{ lineHeight: "0.5em", display:"block" }}>du</span> Français
