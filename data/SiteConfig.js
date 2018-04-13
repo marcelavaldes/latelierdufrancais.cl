@@ -3,6 +3,7 @@ module.exports = {
   siteTitle: "L'atelier du Français", // Site title.
   siteTitleAlt: "latelierdufrancais.cl", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
+  siteImage: "/logos/p1.png", // Image used for OpenGraph.
   siteUrl: "https://www.latelierdufrancais.cl", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "Somos una comunidad en torno a la lengua y cultura francesa. Estamos en Talca y San Clemente.", // Website description used for RSS feeds/meta description tag.

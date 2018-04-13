@@ -78,9 +78,7 @@ class Index extends Component {
           <meta property="og:type" content="website" />
           <meta property="og:title" content={config.siteTitle} />
           <meta property="og:description" content={config.siteDescription} />
-          <meta property="og:image" content={config.siteUrl + config.siteLogo} />
-          <meta property="og:image:width" content={1024} />
-          <meta property="og:image:height" content={1024} />
+          <meta property="og:image" content={config.siteUrl + config.siteImage} />
           <meta property="fb:app_id" content={config.siteFBAppID}
           />
 
