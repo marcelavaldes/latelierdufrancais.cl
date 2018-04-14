@@ -26,9 +26,9 @@ export default class Logo extends Component {
     const pasto = document.getElementById("pasto");
     const torre = document.getElementById("torre");
     const nubes = document.getElementById("nubes");
-    pasto.style.transform = `translateY(${-document.documentElement.scrollTop/3}px)`
-    torre.style.transform = `translateY(${-document.documentElement.scrollTop/12}px)`
-    nubes.style.transform = `translateY(${document.documentElement.scrollTop/3}px)`
+    pasto.style.transform = `translateY(${document.documentElement.scrollTop/9}px)`
+    torre.style.transform = `translateY(${document.documentElement.scrollTop/6}px)`
+    nubes.style.transform = `translateY(${document.documentElement.scrollTop/12}px)`
   }
 
   render() {
@@ -44,12 +44,13 @@ export default class Logo extends Component {
         //height={height}
         preserveAspectRatio="xMidYMid meet"
       >
+
         <rect
           className="cielo"
-          x="1264"
-          y="162.3"
-          width="319.6"
-          height="409.4"
+          x="1240"
+          y="120"
+          width="361.8298"
+          height="545.0968"
         />
         <g id="nubes">
         <g id="nube6">
