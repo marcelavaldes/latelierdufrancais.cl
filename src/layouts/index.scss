@@ -2,19 +2,19 @@
 @import "./palette.scss";
 
 // Variables
-$font-stack: 'Text Me One', sans-serif;
+//$font-stack: 'Text Me One', sans-serif;
 //$primary-color: $color1;
 //$background-color: $color2;
 //$link-color: $color3;
 
 body {
-  font-family: $font-stack;
+//  font-family: $font-stack;
   color: $color3;
   background-color: $color2;
 }
 
 .ui.header, .ui.menu {
-  font-family: $font-stack;
+//  font-family: $font-stack;
   color: $color5;
 }
 
