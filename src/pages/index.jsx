@@ -96,10 +96,10 @@ class Index extends Component {
         </Helmet>
 
         <Segment basic style={{ minHeight: "100vh" }}>
-          <Responsive minWidth={767} style={{ minHeight: "100vh" }}>
+          <Responsive minWidth={Responsive.onlyMobile.maxWidth} style={{ minHeight: "100vh" }}>
             <HomeCover />
           </Responsive>
-          <Responsive maxWidth={767} style={{ minHeight: "100vh" }}>
+          <Responsive {...Responsive.onlyMobile} style={{ minHeight: "100vh" }}>
             <HomeCover mobile />
           </Responsive>
         </Segment>

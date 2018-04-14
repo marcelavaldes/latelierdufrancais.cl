@@ -24,6 +24,14 @@ module.exports = {
     "gatsby-plugin-catch-links",
     "gatsby-plugin-sitemap",
     {
+      resolve: "gatsby-plugin-less",
+      options: {
+        theme: {
+          "text-color": `#fff`,
+        },
+      },
+    },
+    {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: config.googleAnalyticsID
