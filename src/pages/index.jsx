@@ -16,6 +16,7 @@ import {
 import Link from "gatsby-link";
 import config from "../../data/SiteConfig";
 import Logo from '../components/Logo/Logo';
+import { color1, color2, color3, color4, color5 } from "../layouts/paletteExports.scss";
 
 const HomeCover = ({ mobile }) => {
   return (
@@ -46,10 +47,6 @@ const HomeCover = ({ mobile }) => {
       </Grid.Row>
     </Grid>
   );
-}
-
-const MobileCover = (props) => {
-  return (<div>MyComponent</div>);
 }
 
 class Index extends Component {
@@ -94,7 +91,7 @@ class Index extends Component {
           */}
         </Helmet>
 
-        <Segment basic style={{ minHeight: "100vh" }}>
+        <Segment basic style={{ minHeight: "100vh", backgroundColor: color2 }}>
           <Responsive minWidth={Responsive.onlyMobile.maxWidth} style={{ minHeight: "100vh" }}>
             <HomeCover />
           </Responsive>
@@ -103,32 +100,29 @@ class Index extends Component {
           </Responsive>
         </Segment>
 
-        <Segment style={{ padding: "0em" }} vertical>
-          <Grid celled="internally" columns="equal" stackable>
+        <Segment style={{ padding: "5em 0em", backgroundColor: color3 }} vertical>
+          <Grid columns="equal" stackable>
             <Grid.Row textAlign="center">
               <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-                <Header as="h3" style={{ fontSize: "2em" }}>
-                  ¿Te gustaría enseñar?
+                <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
+                  ¿Te gustaría aprender francés?
                 </Header>
-                <p style={{ fontSize: "1.33em" }}>
-                  That is what they all say about us
+                <p style={{ fontSize: "1.66em", color: color2 }}>
+                  Contamos con clases para individuos o grupos pequeños donde tú armas los horarios,
+                  y cursos con horario fijo disponibles durante todo el año.
                 </p>
               </Grid.Column>
               <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-                <Header as="h3" style={{ fontSize: "2em" }}>
-                  ¿Te gustaría colaborar?
+                <Header as="h3" style={{ fontSize: "2em", color: color4 }}>
+                  ¿Te gustaría enseñar con nosotros?
                 </Header>
-                <p style={{ fontSize: "1.33em" }}>
-                  <Image avatar src="//via.placeholder.com/350x150" />
-                  <b>Nan</b> Chief Fun Officer Acme Toys
+                <p style={{ fontSize: "1.66em", color: color2 }}>
+                  Únete a nuestro registro de tutores y participa en nuestras actividades.
                 </p>
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </Segment>
-
-
-
 
         <Segment style={{ padding: "8em 0em" }} vertical>
           <Container text>
