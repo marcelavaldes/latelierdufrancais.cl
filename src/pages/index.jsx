@@ -36,12 +36,11 @@ const HomeCover = ({ mobile }) => {
           <p style={{ fontSize: "2em" }}>
             Somos una comunidad en torno a la lengua y cultura francesa.
             <br />
-            Realizamos nuestros talleres y actividades en Talca y San Clemente.
+            Realizamos nuestros talleres y actividades en la Región del Maule.
             <br />
           </p>
           <Button as="a" size="large" color="red">
-            Escríbenos
-
+            Saber más...
           </Button>
         </Grid.Column>
       </Grid.Row>
