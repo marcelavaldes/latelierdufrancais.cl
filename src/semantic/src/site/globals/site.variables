@@ -3,3 +3,7 @@
 *******************************/
 @red            : #ed6a5a;
 @white          : #f4f1bb;
+
+@headerFont        : 'Text Me One', sans-serif;
+@pageFont          : 'Text Me One', sans-serif;
+@googleFontFamily  : 'Text Me One', sans-serif;
