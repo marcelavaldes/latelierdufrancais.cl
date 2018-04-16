@@ -91,7 +91,7 @@ class Index extends Component {
           */}
         </Helmet>
 
-        <Segment style={{ minHeight: "100vh", background: null, backgroundColor: color2 }}>
+        <Segment style={{ minHeight: "100vh", backgroundColor: color2 }}>
           <Responsive minWidth={Responsive.onlyMobile.maxWidth} style={{ minHeight: "100vh" }}>
             <HomeCover />
           </Responsive>
@@ -100,7 +100,7 @@ class Index extends Component {
           </Responsive>
         </Segment>
 
-        <Segment style={{ padding: "5em 0em", background: null, backgroundColor: color3 }} basic>
+        <Segment style={{ padding: "5em 0em", backgroundColor: color3 }}>
           <Grid columns="equal" stackable>
             <Grid.Row textAlign="center">
               <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
