@@ -3,5 +3,3 @@
 *******************************/
 @red            : #ed6a5a;
 @white          : #f4f1bb;
-@pageFont		: 'Text Me One', sans-serif;
-@headerFont		: 'Text Me One', sans-serif;
