@@ -16,12 +16,12 @@ export default class Escribenos extends Component {
 
   handleSubmit(event) {
     alert('Ok, ' + this.state.value + ', te contactaremos a la brevedad.');
-    event.preventDefault();
+    //event.preventDefault();
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} name="contactos" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+      <form onSubmit={this.handleSubmit} name="contactos" method="post" netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="bot-field" />
         {console.log(this.state)}
         <label>
