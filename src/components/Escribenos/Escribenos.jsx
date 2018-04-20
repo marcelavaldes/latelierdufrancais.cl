@@ -5,7 +5,7 @@ import "./Escribenos.scss";
 export default class Escribenos extends Component {
   render() {
     return (
-        <form name="ahorazi" method="post" action="/merci" data-netlify="true" data-netlify-honeypot="bot-field">
+        <Form name="ahorazi" method="post" action="/merci" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="bot-field" />
           <label htmlFor="name">
             <p>
@@ -40,7 +40,7 @@ export default class Escribenos extends Component {
           </label>
           <input type="submit" value="Send Message" className="special" />
           <input type="reset" value="Clear" />
-        </form>
+        </Form>
     )
   }
 }
