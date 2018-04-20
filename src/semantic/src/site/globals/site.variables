@@ -2,6 +2,7 @@
      User Global Variables
 *******************************/
 @red            : #ed6a5a;
+@blue           : #1f363d;
 @white          : #f4f1bb;
 
 @headerFont        : 'Text Me One', sans-serif;

@@ -16,6 +16,8 @@ import {
 import Link from "gatsby-link";
 import config from "../../data/SiteConfig";
 import Logo from '../components/Logo/Logo';
+import Escribenos from '../components/Escribenos/Escribenos';
+
 import { color1, color2, color3, color4, color5 } from "../layouts/paletteExports.scss";
 
 const HomeCover = ({ mobile }) => {
@@ -100,32 +102,55 @@ class Index extends Component {
           </Responsive>
         </Segment>
 
-        <Segment style={{ padding: "5em 0em", backgroundColor: color3 }}>
+        <Segment style={{ padding: "5em 0em", backgroundColor: color3 }} vertical>
           <Grid columns="equal" stackable>
             <Grid.Row textAlign="center">
               <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
                 <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
-                  ¿Te gustaría aprender francés?
+                  ¿Te gustaría aprender?
                 </Header>
                 <p style={{ fontSize: "1.66em", color: color2 }}>
                   Contamos con clases para individuos o grupos pequeños donde tú armas los horarios,
                   y cursos con horario fijo disponibles durante todo el año.
                 </p>
+                <Button as="a" size="large" color="red">
+                  Saber más...
+                </Button>
               </Grid.Column>
               <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-                <Header as="h3" style={{ fontSize: "2em", color: color4 }}>
-                  ¿Te gustaría enseñar con nosotros?
+                <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
+                  ¿Te gustaría colaborar?
                 </Header>
                 <p style={{ fontSize: "1.66em", color: color2 }}>
-                  Únete a nuestro registro de tutores y participa en nuestras actividades.
+                  Todas las propuestas son bienvenidas, cuéntanos tu idea.
+                  Si lo que quieres es enseñar, únete a nuestro registro de tutores.
                 </p>
+                <Button as="a" size="large" color="blue">
+                  Saber más...
+                </Button>
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </Segment>
 
-        <Segment style={{ padding: "8em 0em" }} vertical>
-          <Container text>
+        <Segment style={{ padding: "5em 0em", backgroundColor: color4 }} vertical>
+          <Grid container centered>
+            <Grid.Row>
+              <Grid.Column textAlign="center">
+                <Header as="h3" style={{ fontSize: "2.4em", color: color3 }}>
+                  Escríbenos
+                </Header>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column width={10}>
+                <Escribenos />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+
+{/*
             <Header as="h3" style={{ fontSize: "2em" }}>
               Breaking The Grid, Grabs Your Attention
             </Header>
@@ -160,8 +185,8 @@ class Index extends Component {
             <Button as="a" size="large">
               I'm Still Quite Interested
             </Button>
-          </Container>
-        </Segment>
+*/}
+
       </Segment>
     );
   }
