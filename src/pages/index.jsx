@@ -16,7 +16,7 @@ import {
 import Link from "gatsby-link";
 import config from "../../data/SiteConfig";
 import Logo from '../components/Logo/Logo';
-import Escribenos from '../components/Escribenos/Escribenos2';
+import Escribenos from '../components/Escribenos/Escribenos';
 
 import { color1, color2, color3, color4, color5 } from "../layouts/paletteExports.scss";
 
