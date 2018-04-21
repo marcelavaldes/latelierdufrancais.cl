@@ -5,7 +5,7 @@ import "./Escribenos.scss";
 export default class Escribenos extends Component {
   render() {
     return (
-      <Form name="ahora" method="post" action="#" data-netlify="true" data-netlify-honeypot="bot-field">
+      <Form name="ahora" method="post" netlify="true" netlify-honeypot="bot-field">
         <Form.Group widths='equal'>
           <Form.Field id='form-input-control-first-name' control={Input} label='First name' placeholder='First name' />
           <Form.Field id='form-input-control-last-name' control={Input} label='Last name' placeholder='Last name' />
