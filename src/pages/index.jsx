@@ -16,7 +16,7 @@ import {
 import Link from "gatsby-link";
 import config from "../../data/SiteConfig";
 import Logo from '../components/Logo/Logo';
-import Escribenos from '../components/Escribenos/Escribenos';
+import Escribenos from '../components/Escribenos/Escribenos2';
 
 import { color1, color2, color3, color4, color5 } from "../layouts/paletteExports.scss";
 
@@ -114,7 +114,7 @@ class Index extends Component {
                   y cursos con horario fijo disponibles durante todo el año.
                 </p>
                 <Button as="a" size="large" color="red">
-                  Saber más...
+                  Aprende
                 </Button>
               </Grid.Column>
               <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
@@ -125,8 +125,8 @@ class Index extends Component {
                   Todas las propuestas son bienvenidas, cuéntanos tu idea.
                   Si lo que quieres es enseñar, únete a nuestro registro de tutores.
                 </p>
-                <Button as="a" size="large" color="blue">
-                  Saber más...
+                <Button as="a" size="large" color="red">
+                  Colabora
                 </Button>
               </Grid.Column>
             </Grid.Row>
