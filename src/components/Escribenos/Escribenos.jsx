@@ -33,6 +33,7 @@ export default class Escribenos extends Component {
           <p>
             Message
             <textarea
+              className="notes"
               name="message"
               required
             />
