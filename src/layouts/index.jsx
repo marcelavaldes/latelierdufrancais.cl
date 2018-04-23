@@ -54,18 +54,7 @@ export default class MainLayout extends Component {
   render() {
     const lala = this.state
     return (
-      <Segment
-        basic
-        style={{
-          padding: 0,
-          margin: 0,
-          //background: `url(${pattern})`,
-          backgroundAttachment: "fixed",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat no-repeat",
-          backgroundPosition: "center center"
-        }}
-      >
+      <Segment basic vertical>
         <Helmet>
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />

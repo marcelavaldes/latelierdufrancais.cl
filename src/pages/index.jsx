@@ -24,9 +24,13 @@ const HomeCover = ({ mobile }) => {
   return (
     <Grid stackable columns="equal" style={{ minHeight:"100vh" }}>
       <Grid.Row verticalAlign="middle">
-        <Grid.Column textAlign="center">
-          <Logo width="80" height="80" />
-        </Grid.Column>
+        { mobile
+          ? null
+          :
+          <Grid.Column textAlign="center">
+            <Logo width="80" height="80" />
+          </Grid.Column>
+        }
         <Grid.Column textAlign={ mobile ? "center" : "left" }>
           <Header
             as="h3"
@@ -54,17 +58,11 @@ const HomeCover = ({ mobile }) => {
 class Index extends Component {
   render() {
     return (
-      <Segment
-        basic
-        style={{
-          padding: 0
-        }}
-      >
+      <Segment basic vertical>
         <Helmet title={config.siteTitle}>
           {/* General tags */}
           <meta name="description" content={config.siteDescription} />
           <meta name="image" content={config.siteUrl + config.siteLogo} />
-
           {/* Schema.org tags */}
           {/*
             <script type="application/ld+json">
@@ -79,7 +77,6 @@ class Index extends Component {
           <meta property="og:image" content={config.siteUrl + config.siteImage} />
           <meta property="fb:app_id" content={config.siteFBAppID}
           />
-
           {/* Twitter Card tags */}
           {/*
             <meta name="twitter:card" content="summary_large_image" />
@@ -93,7 +90,7 @@ class Index extends Component {
           */}
         </Helmet>
 
-        <Segment style={{ minHeight: "100vh", backgroundColor: color2 }}>
+        <Segment basic style={{ minHeight: "100vh", backgroundColor: color2 }} vertical>
           <Responsive minWidth={Responsive.onlyMobile.maxWidth} style={{ minHeight: "100vh" }}>
             <HomeCover />
           </Responsive>
@@ -102,10 +99,22 @@ class Index extends Component {
           </Responsive>
         </Segment>
 
-        <Segment style={{ padding: "5em 0em", backgroundColor: color3 }} vertical>
-          <Grid columns="equal" stackable>
-            <Grid.Row textAlign="center">
-              <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+        <Segment basic style={{ backgroundColor: color2 }} vertical>
+          <Container style={{ paddingTop: "4em", paddingBottom: "12em" }} text>
+            <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
+              Bonjour, mon amis :D
+            </Header>
+            <p style={{ fontSize: "1.66em", color: color3 }}>
+              Contamos con clases para individuos o grupos pequeños donde tú armas los horarios,
+              y cursos con horario fijo disponibles durante todo el año.
+            </p>
+          </Container>
+        </Segment>
+
+        <Segment basic style={{ padding: "8em 1em", backgroundColor: color3 }} vertical>
+          <Grid container stackable>
+            <Grid.Row textAlign="center" columns="equal">
+              <Grid.Column>
                 <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
                   ¿Te gustaría aprender?
                 </Header>
@@ -113,11 +122,11 @@ class Index extends Component {
                   Contamos con clases para individuos o grupos pequeños donde tú armas los horarios,
                   y cursos con horario fijo disponibles durante todo el año.
                 </p>
-                <Button as="a" size="large" color="red">
+                <Button as="a" size="large" color="blue">
                   Aprende
                 </Button>
               </Grid.Column>
-              <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+              <Grid.Column>
                 <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
                   ¿Te gustaría colaborar?
                 </Header>
@@ -149,43 +158,6 @@ class Index extends Component {
             </Grid.Row>
           </Grid>
         </Segment>
-
-{/*
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              Breaking The Grid, Grabs Your Attention
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              Instead of focusing on content creation and hard work, we have
-              learned how to master the art of doing nothing by providing
-              massive amounts of whitespace and generic content that can seem
-              massive, monolithic and worth your attention.
-            </p>
-            <Button as="a" size="large">
-              Read More
-            </Button>
-
-            <Divider
-              as="h4"
-              className="header"
-              horizontal
-              style={{ margin: "3em 0em", textTransform: "uppercase" }}
-            >
-              <a href="#">Case Studies</a>
-            </Divider>
-
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              Did We Tell You About Our Bananas?
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              Yes I know you probably disregarded the earlier boasts as
-              non-sequitur filler content, but it's really true. It took years
-              of gene splicing and combinatory DNA research, but our bananas can
-              really dance.
-            </p>
-            <Button as="a" size="large">
-              I'm Still Quite Interested
-            </Button>
-*/}
 
       </Segment>
     );
