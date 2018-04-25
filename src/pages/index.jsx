@@ -61,7 +61,11 @@ class Index extends Component {
           <Grid stackable columns="equal" style={{ minHeight:"100vh", margin: 0 }}>
             <Grid.Row verticalAlign="middle">
               <Grid.Column textAlign="center">
-                <Logo width="80" height="80" />
+                {
+                  this.props.mobile
+                    ? null
+                    : <Logo width="80" height="80" />
+                }
               </Grid.Column>
               <Grid.Column textAlign={ this.props.mobile ? "center" : "left" }>
                 <Header
