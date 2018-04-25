@@ -20,7 +20,7 @@ import aprende from "../images/aprende.svg"
 export default class Index extends Component {
   render() {
     return (
-      <Segment basic style={{ padding: 0 }} vertical>
+      <Segment basic style={{ minHeight: "100vh", padding: 0 }} vertical>
         <Helmet title={config.siteTitle}>
           {/* General tags */}
           <meta name="description" content={config.siteDescription} />
@@ -58,7 +58,7 @@ export default class Index extends Component {
               <Grid.Column textAlign="center">
                 {
                   this.props.mobile
-                    ? null
+                    ? <Logo width="80" height="80" />
                     : <Logo width="80" height="80" />
                 }
               </Grid.Column>
