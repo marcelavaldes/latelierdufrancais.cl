@@ -59,7 +59,7 @@ export default class MainLayout extends Component {
           <meta name="description" content={config.siteDescription} />
         </Helmet>
         <Responsive minWidth={Responsive.onlyMobile.maxWidth} style={{ minHeight: "100vh" }}>
-          { this.props.children() }
+          { this.props.children({...this.props, mobile: false }) }
         </Responsive>
         <Responsive {...Responsive.onlyMobile} style={{ minHeight: "100vh" }}>
           { this.props.children({...this.props, mobile: true }) }
