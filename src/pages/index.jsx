@@ -19,10 +19,12 @@ import Logo from '../components/Logo/Logo';
 import Escribenos from '../components/Escribenos/Escribenos';
 
 import { color1, color2, color3, color4, color5 } from "../layouts/paletteExports.scss";
+import colabora from "../images/colabora.svg";
+import aprende from "../images/aprende.svg"
 
 const HomeCover = ({ mobile }) => {
   return (
-    <Grid stackable columns="equal" style={{ minHeight:"100vh" }}>
+    <Grid stackable columns="equal" style={{ minHeight:"100vh", margin: 0 }}>
       <Grid.Row verticalAlign="middle">
         { mobile
           ? null
@@ -58,7 +60,7 @@ const HomeCover = ({ mobile }) => {
 class Index extends Component {
   render() {
     return (
-      <Segment basic vertical>
+      <Segment basic style={{ padding: 0 }} vertical>
         <Helmet title={config.siteTitle}>
           {/* General tags */}
           <meta name="description" content={config.siteDescription} />
@@ -90,7 +92,7 @@ class Index extends Component {
           */}
         </Helmet>
 
-        <Segment basic style={{ minHeight: "100vh", backgroundColor: color2 }} vertical>
+        <Segment basic style={{ minHeight: "100vh", padding: 0, backgroundColor: color2 }} vertical>
           <Responsive minWidth={Responsive.onlyMobile.maxWidth} style={{ minHeight: "100vh" }}>
             <HomeCover />
           </Responsive>
@@ -115,6 +117,11 @@ class Index extends Component {
           <Grid container stackable>
             <Grid.Row textAlign="center" columns="equal">
               <Grid.Column>
+                <Image
+                  src={aprende}
+                  size="small"
+                  centered
+                />
                 <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
                   ¿Te gustaría aprender?
                 </Header>
@@ -127,6 +134,11 @@ class Index extends Component {
                 </Button>
               </Grid.Column>
               <Grid.Column>
+                <Image
+                  src={colabora}
+                  size="small"
+                  centered
+                />
                 <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
                   ¿Te gustaría colaborar?
                 </Header>
@@ -137,23 +149,6 @@ class Index extends Component {
                 <Button as="a" size="large" color="red">
                   Colabora
                 </Button>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment>
-
-        <Segment style={{ padding: "5em 0em", backgroundColor: color4 }} vertical>
-          <Grid container centered>
-            <Grid.Row>
-              <Grid.Column textAlign="center">
-                <Header as="h3" style={{ fontSize: "2.4em", color: color3 }}>
-                  Escríbenos
-                </Header>
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column width={10}>
-                <Escribenos />
               </Grid.Column>
             </Grid.Row>
           </Grid>
