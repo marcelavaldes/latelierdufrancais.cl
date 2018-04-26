@@ -5,33 +5,62 @@ import {
   Container,
   Grid,
   Header,
+  List,
   Button,
-  Image
+  Table,
+  Divider,
+  Image,
+  Icon,
+  Responsive
 } from "semantic-ui-react";
 import Link from "gatsby-link";
 import config from "../../data/SiteConfig";
 import Logo from '../components/Logo/Logo';
-
 import Escribenos from '../components/Escribenos/Escribenos';
 
+import { color1, color2, color3, color4, color5 } from "../layouts/paletteExports.scss";
 import colabora from "../images/colabora.svg";
 import aprende from "../images/aprende.svg"
 
-export const Cover = (props) => {
+const HomeCover = ({ mobile }) => {
   return (
-    <Grid.Column width={8}>
-      <Logo />
-    </Grid.Column>
+    <Grid stackable columns="equal" style={{ minHeight:"100vh", margin: 0 }}>
+      <Grid.Row verticalAlign="middle">
+        { mobile
+          ? null
+          :
+          <Grid.Column textAlign="center">
+            <Logo width="80" height="80" />
+          </Grid.Column>
+        }
+        <Grid.Column textAlign={ mobile ? "center" : "left" }>
+          <Header
+            as="h3"
+            style={{
+              fontSize: mobile ? "22vw" : "8vw",
+            }}
+          >
+            L'atelier <span style={{ lineHeight: "0.5em", display:"block" }}>du</span> Français
+          </Header>
+          <p style={{ fontSize: "2em" }}>
+            Somos una comunidad en torno a la lengua y cultura francesa.
+            <br />
+            Realizamos nuestros talleres y actividades en la Región del Maule.
+            <br />
+          </p>
+          <Button as="a" size="large" color="red">
+            Saber más...
+          </Button>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
   );
 }
 
-Cover.propTypes = {
-};
-
-export default class Index extends Component {
+class Index extends Component {
   render() {
     return (
-      <Segment basic style={{ minHeight: "100vh", padding: 0 }} vertical>
+      <Segment basic style={{ padding: 0 }} vertical>
         <Helmet title={config.siteTitle}>
           {/* General tags */}
           <meta name="description" content={config.siteDescription} />
@@ -63,50 +92,28 @@ export default class Index extends Component {
           */}
         </Helmet>
 
-        <Segment basic style={{ minHeight: "100vh", padding: 0 }} vertical>
-          <Grid stackable style={{ minHeight:"100vh", margin: 0 }} verticalAlign="middle">
-            <Grid.Row>
-              {
-                this.props.mobile
-                  ? null
-                  : <Cover />
-              }
-              <Grid.Column width={8} textAlign={ this.props.mobile ? "center" : "left" }>
-                <Header
-                  as="h3"
-                  style={{
-                    fontSize: this.props.mobile ? "22vw" : "8vw",
-                  }}
-                >
-                  L'atelier <span style={{ lineHeight: "0.5em", display:"block" }}>du</span> Français
-                </Header>
-                <p style={{ fontSize: "2em" }}>
-                  Somos una comunidad en torno a la lengua y cultura francesa.
-                  <br />
-                  Realizamos nuestros talleres y actividades en la Región del Maule.
-                  <br />
-                </p>
-                <Button as="a" size="large" color="red">
-                  Saber más...
-                </Button>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
+        <Segment basic style={{ minHeight: "100vh", padding: 0, backgroundColor: color2 }} vertical>
+          <Responsive minWidth={Responsive.onlyMobile.maxWidth} style={{ minHeight: "100vh" }}>
+            <HomeCover />
+          </Responsive>
+          <Responsive {...Responsive.onlyMobile} style={{ minHeight: "100vh" }}>
+            <HomeCover mobile />
+          </Responsive>
         </Segment>
 
-        <Segment basic vertical>
+        <Segment basic style={{ backgroundColor: color2 }} vertical>
           <Container style={{ paddingTop: "4em", paddingBottom: "12em" }} text>
-            <Header as="h3" style={{ fontSize: "2.4em" }}>
+            <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
               Bonjour, mon amis :D
             </Header>
-            <p style={{ fontSize: "1.66em" }}>
+            <p style={{ fontSize: "1.66em", color: color3 }}>
               Contamos con clases para individuos o grupos pequeños donde tú armas los horarios,
               y cursos con horario fijo disponibles durante todo el año.
             </p>
           </Container>
         </Segment>
 
-        <Segment basic style={{ padding: "8em 1em" }} vertical>
+        <Segment basic style={{ padding: "8em 1em", backgroundColor: color3 }} vertical>
           <Grid container stackable>
             <Grid.Row textAlign="center" columns="equal">
               <Grid.Column>
@@ -115,10 +122,10 @@ export default class Index extends Component {
                   size="small"
                   centered
                 />
-                <Header as="h3" style={{ fontSize: "2.4em" }}>
+                <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
                   ¿Te gustaría aprender?
                 </Header>
-                <p style={{ fontSize: "1.66em" }}>
+                <p style={{ fontSize: "1.66em", color: color2 }}>
                   Contamos con clases para individuos o grupos pequeños donde tú armas los horarios,
                   y cursos con horario fijo disponibles durante todo el año.
                 </p>
@@ -132,10 +139,10 @@ export default class Index extends Component {
                   size="small"
                   centered
                 />
-                <Header as="h3" style={{ fontSize: "2.4em" }}>
+                <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
                   ¿Te gustaría colaborar?
                 </Header>
-                <p style={{ fontSize: "1.66em" }}>
+                <p style={{ fontSize: "1.66em", color: color2 }}>
                   Todas las propuestas son bienvenidas, cuéntanos tu idea.
                   Si lo que quieres es enseñar, únete a nuestro registro de tutores.
                 </p>
@@ -146,7 +153,10 @@ export default class Index extends Component {
             </Grid.Row>
           </Grid>
         </Segment>
+
       </Segment>
     );
   }
 }
+
+export default Index;

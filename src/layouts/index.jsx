@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import PropTypes from "prop-types";
-import { Segment, Container, Header, Responsive } from "semantic-ui-react"
+import { Segment, Container, Header } from "semantic-ui-react"
 //import ResponsiveMenu from "../components/ResponsiveMenu/ResponsiveMenu";
 import Footer from "../components/Footer/Footer";
 
@@ -52,18 +52,20 @@ export default class MainLayout extends Component {
   }
 
   render() {
+    const lala = this.state
     return (
       <Segment basic style={{ padding: 0 }} vertical>
         <Helmet>
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <Responsive minWidth={Responsive.onlyMobile.maxWidth} style={{ minHeight: "100vh" }}>
-          { this.props.children({...this.props, mobile: false }) }
-        </Responsive>
-        <Responsive {...Responsive.onlyMobile} style={{ minHeight: "100vh" }}>
-          { this.props.children({...this.props, mobile: true }) }
-        </Responsive>
+        {
+          //<ResponsiveMenu currentPage={this.getLocalTitle()} config={config}/>
+        }
+
+        {
+          this.props.children({...this.props, lala})
+        }
         <Footer config={config} />
       </Segment>
     );
