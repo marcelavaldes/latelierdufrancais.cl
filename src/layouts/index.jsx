@@ -62,7 +62,7 @@ export default class MainLayout extends Component {
 
         <Responsive minWidth={Responsive.onlyMobile.maxWidth} style={{ minHeight: "100vh" }}>
           {
-            this.props.children()
+            this.props.children({...this.props, mobile: false})
           }
         </Responsive>
         <Responsive {...Responsive.onlyMobile} style={{ minHeight: "100vh" }}>

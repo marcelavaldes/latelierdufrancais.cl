@@ -25,6 +25,7 @@ const Index = ({ mobile }) => {
     return (
       <Segment basic style={{ padding: 0 }} vertical>
         <Helmet title={config.siteTitle}>
+          {console.log(mobile)}
           {/* General tags */}
           <meta name="description" content={config.siteDescription} />
           <meta name="image" content={config.siteUrl + config.siteLogo} />
