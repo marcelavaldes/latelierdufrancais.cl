@@ -53,35 +53,29 @@ export default class Index extends Component {
         </Helmet>
 
         <Segment basic style={{ minHeight: "100vh", padding: 0 }} vertical>
-          <Grid stackable columns="equal" style={{ minHeight:"100vh", margin: 0 }} verticalAlign="middle">
-            <Grid.Row style={{ minHeight:"100vh"}}>
-              <Grid.Column width={8} textAlign="center">
-                {
-                  this.props.mobile
-                    ? null
-                    : <Logo width="80" height="80" />
-                }
-              </Grid.Column>
-              <Grid.Column width={8} textAlign={ this.props.mobile ? "center" : "left" }>
-                <Header
-                  as="h3"
-                  style={{
-                    fontSize: this.props.mobile ? "22vw" : "8vw",
-                  }}
-                >
-                  L'atelier <span style={{ lineHeight: "0.5em", display:"block" }}>du</span> Français
-                </Header>
-                <p style={{ fontSize: "2em" }}>
-                  Somos una comunidad en torno a la lengua y cultura francesa.
-                  <br />
-                  Realizamos nuestros talleres y actividades en la Región del Maule.
-                  <br />
-                </p>
-                <Button as="a" size="large" color="red">
-                  Saber más...
-                </Button>
-              </Grid.Column>
-            </Grid.Row>
+          <Grid stackable style={{ minHeight:"100vh", margin: 0 }} verticalAlign="middle">
+            <Grid.Column width={8} textAlign="center">
+              <Logo />
+            </Grid.Column>
+            <Grid.Column width={8} textAlign={ this.props.mobile ? "center" : "left" }>
+              <Header
+                as="h3"
+                style={{
+                  fontSize: this.props.mobile ? "22vw" : "8vw",
+                }}
+              >
+                L'atelier <span style={{ lineHeight: "0.5em", display:"block" }}>du</span> Français
+              </Header>
+              <p style={{ fontSize: "2em" }}>
+                Somos una comunidad en torno a la lengua y cultura francesa.
+                <br />
+                Realizamos nuestros talleres y actividades en la Región del Maule.
+                <br />
+              </p>
+              <Button as="a" size="large" color="red">
+                Saber más...
+              </Button>
+            </Grid.Column>
           </Grid>
         </Segment>
 
