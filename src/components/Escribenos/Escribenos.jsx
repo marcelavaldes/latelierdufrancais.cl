@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
 import "./Escribenos.scss";
 
 export default class Escribenos extends Component {
   render() {
     return (
-      <Form name="ahorazi" method="post" action="/merci" data-netlify="true" data-netlify-honeypot="bot-field">
+      <Form name="ahorazi" method="post" action="/merci" data-netlify="true" data-netlify-honeypot="bot-field" style={{ fontSize: "1.66em" }}>
         <input type="hidden" name="bot-field" />
         <label htmlFor="name">
           <p>
@@ -39,8 +39,12 @@ export default class Escribenos extends Component {
             />
           </p>
         </label>
-        <input type="submit" value="Send Message" className="special" />
-        <input type="reset" value="Clear" />
+        <Button type="submit" size="large" color="red">
+          Enviar
+        </Button>
+        <Button type="reset" size="large" color="blue">
+          Borrar
+        </Button>
       </Form>
     )
   }
