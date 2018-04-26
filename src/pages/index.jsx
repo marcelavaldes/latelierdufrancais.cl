@@ -17,6 +17,17 @@ import Escribenos from '../components/Escribenos/Escribenos';
 import colabora from "../images/colabora.svg";
 import aprende from "../images/aprende.svg"
 
+export const Cover = (props) => {
+  return (
+    <Grid.Column width={8}>
+      <Logo />
+    </Grid.Column>
+  );
+}
+
+Cover.propTypes = {
+};
+
 export default class Index extends Component {
   render() {
     return (
@@ -54,28 +65,32 @@ export default class Index extends Component {
 
         <Segment basic style={{ minHeight: "100vh", padding: 0 }} vertical>
           <Grid stackable style={{ minHeight:"100vh", margin: 0 }} verticalAlign="middle">
-            <Grid.Column width={8} textAlign="center">
-              <Logo />
-            </Grid.Column>
-            <Grid.Column width={8} textAlign={ this.props.mobile ? "center" : "left" }>
-              <Header
-                as="h3"
-                style={{
-                  fontSize: this.props.mobile ? "22vw" : "8vw",
-                }}
-              >
-                L'atelier <span style={{ lineHeight: "0.5em", display:"block" }}>du</span> Français
-              </Header>
-              <p style={{ fontSize: "2em" }}>
-                Somos una comunidad en torno a la lengua y cultura francesa.
-                <br />
-                Realizamos nuestros talleres y actividades en la Región del Maule.
-                <br />
-              </p>
-              <Button as="a" size="large" color="red">
-                Saber más...
-              </Button>
-            </Grid.Column>
+            <Grid.Row>
+              {
+                this.props.mobile
+                  ? null
+                  : <Cover />
+              }
+              <Grid.Column width={8} textAlign={ this.props.mobile ? "center" : "left" }>
+                <Header
+                  as="h3"
+                  style={{
+                    fontSize: this.props.mobile ? "22vw" : "8vw",
+                  }}
+                >
+                  L'atelier <span style={{ lineHeight: "0.5em", display:"block" }}>du</span> Français
+                </Header>
+                <p style={{ fontSize: "2em" }}>
+                  Somos una comunidad en torno a la lengua y cultura francesa.
+                  <br />
+                  Realizamos nuestros talleres y actividades en la Región del Maule.
+                  <br />
+                </p>
+                <Button as="a" size="large" color="red">
+                  Saber más...
+                </Button>
+              </Grid.Column>
+            </Grid.Row>
           </Grid>
         </Segment>
 
