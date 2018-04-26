@@ -1,7 +1,10 @@
 input[type=text], textarea {
   background-color: rgba(0,0,0,0) !important;
-  //border: 0 !important;
   border: 2px solid #f4f1bb !important;
-  //border-radius: 0 !important;
-  //border-bottom: 2px solid #f4f1bb !important;
+  font-family: 'Text Me One', sans-serif;
+  font-size: 1.66em !important;
+}
+
+.ui.form span {
+  font-size: 1.66em !important;
 }
