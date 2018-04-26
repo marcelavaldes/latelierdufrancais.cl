@@ -1,28 +1,22 @@
-import React from 'react'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import React from 'react';
+import Link from 'gatsby-link';
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
+import Logo from '../components/Logo/Logo';
 
-const LoginForm = () => (
-  <div className='login-form'>
-    {/*
-      Heads up! The styles below are necessary for the correct render of this example.
-      You can do same with CSS, the main idea is that all the elements up to the `Grid`
-      below must have a height of 100%.
-    */}
-    <style>{`
-      body > div,
-      body > div > div,
-      body > div > div > div.login-form {
-        height: 100%;
-      }
-    `}</style>
+const Login = () => (
+  <Segment
+    basic
+    style={{ padding: 0, minHeight: '100vh' }}
+    vertical
+  >
     <Grid
       textAlign='center'
-      style={{ height: '100%' }}
+      style={{ minHeight: '100vh', margin: 0 }}
       verticalAlign='middle'
     >
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as='h2' color='teal' textAlign='center'>
-          <Image src='/logo.png' />
+        <Header as='h2' textAlign='center'>
+          <Logo />
           {' '}Log-in to your account
         </Header>
         <Form size='large'>
@@ -49,7 +43,6 @@ const LoginForm = () => (
         </Message>
       </Grid.Column>
     </Grid>
-  </div>
+  </Segment>
 )
-
-export default LoginForm
+export default Login
