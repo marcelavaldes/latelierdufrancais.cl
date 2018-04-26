@@ -21,43 +21,7 @@ import Escribenos from '../components/Escribenos/Escribenos';
 import colabora from "../images/colabora.svg";
 import aprende from "../images/aprende.svg";
 
-const HomeCover = ({ mobile }) => {
-  return (
-    <Grid stackable columns="equal" style={{ minHeight:"100vh", margin: 0 }}>
-      <Grid.Row verticalAlign="middle">
-        { mobile
-          ? null
-          :
-          <Grid.Column textAlign="center">
-            <Logo width="80" height="80" />
-          </Grid.Column>
-        }
-        <Grid.Column textAlign={ mobile ? "center" : "left" }>
-          <Header
-            as="h3"
-            style={{
-              fontSize: mobile ? "22vw" : "8vw",
-            }}
-          >
-            L'atelier <span style={{ lineHeight: "0.5em", display:"block" }}>du</span> Français
-          </Header>
-          <p style={{ fontSize: "2em" }}>
-            Somos una comunidad en torno a la lengua y cultura francesa.
-            <br />
-            Realizamos nuestros talleres y actividades en la Región del Maule.
-            <br />
-          </p>
-          <Button as="a" size="large" color="red">
-            Saber más...
-          </Button>
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-  );
-}
-
-class Index extends Component {
-  render() {
+const Index = ({ mobile }) => {
     return (
       <Segment basic style={{ padding: 0 }} vertical>
         <Helmet title={config.siteTitle}>
@@ -92,12 +56,36 @@ class Index extends Component {
         </Helmet>
 
         <Segment basic style={{ minHeight: "100vh", padding: 0 }} vertical>
-          <Responsive minWidth={Responsive.onlyMobile.maxWidth} style={{ minHeight: "100vh" }}>
-            <HomeCover />
-          </Responsive>
-          <Responsive {...Responsive.onlyMobile} style={{ minHeight: "100vh" }}>
-            <HomeCover mobile />
-          </Responsive>
+          <Grid stackable columns="equal" style={{ minHeight:"100vh", margin: 0 }}>
+            <Grid.Row verticalAlign="middle">
+              { mobile
+                ? null
+                :
+                <Grid.Column textAlign="center">
+                  <Logo width="80" height="80" />
+                </Grid.Column>
+              }
+              <Grid.Column textAlign={ mobile ? "center" : "left" }>
+                <Header
+                  as="h3"
+                  style={{
+                    fontSize: mobile ? "22vw" : "8vw",
+                  }}
+                >
+                  L'atelier <span style={{ lineHeight: "0.5em", display:"block" }}>du</span> Français
+                </Header>
+                <p style={{ fontSize: "2em" }}>
+                  Somos una comunidad en torno a la lengua y cultura francesa.
+                  <br />
+                  Realizamos nuestros talleres y actividades en la Región del Maule.
+                  <br />
+                </p>
+                <Button as="a" size="large" color="red">
+                  Saber más...
+                </Button>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </Segment>
 
         <Segment basic vertical>
@@ -163,8 +151,7 @@ class Index extends Component {
         </Segment>
 
       </Segment>
-    );
-  }
+  );
 }
 
 export default Index;
