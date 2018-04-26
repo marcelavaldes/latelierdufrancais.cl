@@ -15,12 +15,11 @@ import {
 } from "semantic-ui-react";
 import Link from "gatsby-link";
 import config from "../../data/SiteConfig";
+
 import Logo from '../components/Logo/Logo';
 import Escribenos from '../components/Escribenos/Escribenos';
-
-import { color1, color2, color3, color4, color5 } from "../layouts/paletteExports.scss";
 import colabora from "../images/colabora.svg";
-import aprende from "../images/aprende.svg"
+import aprende from "../images/aprende.svg";
 
 const HomeCover = ({ mobile }) => {
   return (
@@ -92,7 +91,7 @@ class Index extends Component {
           */}
         </Helmet>
 
-        <Segment basic style={{ minHeight: "100vh", padding: 0, backgroundColor: color2 }} vertical>
+        <Segment basic style={{ minHeight: "100vh", padding: 0 }} vertical>
           <Responsive minWidth={Responsive.onlyMobile.maxWidth} style={{ minHeight: "100vh" }}>
             <HomeCover />
           </Responsive>
@@ -101,19 +100,19 @@ class Index extends Component {
           </Responsive>
         </Segment>
 
-        <Segment basic style={{ backgroundColor: color2 }} vertical>
+        <Segment basic vertical>
           <Container style={{ paddingTop: "4em", paddingBottom: "12em" }} text>
-            <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
+            <Header as="h3" style={{ fontSize: "2.4em" }}>
               Bonjour, mon amis :D
             </Header>
-            <p style={{ fontSize: "1.66em", color: color3 }}>
+            <p style={{ fontSize: "1.66em" }}>
               Contamos con clases para individuos o grupos pequeños donde tú armas los horarios,
               y cursos con horario fijo disponibles durante todo el año.
             </p>
           </Container>
         </Segment>
 
-        <Segment basic style={{ padding: "8em 1em", backgroundColor: color3 }} vertical>
+        <Segment basic style={{ padding: "8em 1em" }} vertical>
           <Grid container stackable>
             <Grid.Row textAlign="center" columns="equal">
               <Grid.Column>
@@ -122,14 +121,14 @@ class Index extends Component {
                   size="small"
                   centered
                 />
-                <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
+                <Header as="h3" style={{ fontSize: "2.4em" }}>
                   ¿Te gustaría aprender?
                 </Header>
-                <p style={{ fontSize: "1.66em", color: color2 }}>
+                <p style={{ fontSize: "1.66em" }}>
                   Contamos con clases para individuos o grupos pequeños donde tú armas los horarios,
                   y cursos con horario fijo disponibles durante todo el año.
                 </p>
-                <Button as="a" size="large" color="blue">
+                <Button as="a" size="large" color="red">
                   Aprende
                 </Button>
               </Grid.Column>
@@ -139,10 +138,10 @@ class Index extends Component {
                   size="small"
                   centered
                 />
-                <Header as="h3" style={{ fontSize: "2.4em", color: color4 }}>
+                <Header as="h3" style={{ fontSize: "2.4em" }}>
                   ¿Te gustaría colaborar?
                 </Header>
-                <p style={{ fontSize: "1.66em", color: color2 }}>
+                <p style={{ fontSize: "1.66em" }}>
                   Todas las propuestas son bienvenidas, cuéntanos tu idea.
                   Si lo que quieres es enseñar, únete a nuestro registro de tutores.
                 </p>
@@ -152,6 +151,15 @@ class Index extends Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
+        </Segment>
+
+        <Segment basic vertical>
+          <Container style={{ paddingTop: "4em", paddingBottom: "12em" }} text>
+            <Header as="h3" style={{ fontSize: "2.4em" }}>
+              Escríbenos
+            </Header>
+            <Escribenos />
+          </Container>
         </Segment>
 
       </Segment>
